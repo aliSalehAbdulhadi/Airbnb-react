@@ -51,7 +51,7 @@ const ImageSwiper = ({ url }: { url: string[] }) => {
               <img
                 className="select-none h-[100%] w-[100%] object-cover"
                 src={url}
-                alt="image"
+                alt="place"
               />
             </div>
           </SwiperSlide>

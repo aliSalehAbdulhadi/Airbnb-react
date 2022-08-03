@@ -16,16 +16,16 @@ const TitleSection = () => {
             />
             5.0
           </span>
-          <span className="mr-2 underline">8 reviews</span>
+          <span className="mr-2 cursor-pointer underline">8 reviews</span>
           <span className="mr-2 font-normal">Superhost</span>
-          <span className="mr-2 underline">Nordland,Norway</span>
+          <span className="mr-2 cursor-pointer underline">Nordland,Norway</span>
         </div>
         <div className="flex items-center just-center">
-          <span className="mr-5 flex items-center underline">
+          <span className="mr-5 flex items-center cursor-pointer underline">
             <img className="mr-1" src="/svg/share.svg" alt="share icon" />
             Share
           </span>
-          <span className="flex items-center underline">
+          <span className="flex items-center cursor-pointer underline">
             <img className="mr-1" src="/svg/heart.svg" alt="heart icon" />
             Save
           </span>

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("~leaflet/dist/leaflet.css");
 
 body {
   margin: 0;
@@ -26,9 +27,23 @@ code {
   );
 }
 
+img {
+  user-select: none;
+}
+
 @font-face {
   font-family: "cerealLight";
   src: url("../components/fonts/cereal/AirbnbCereal_W_Lt.otf");
+}
+
+@font-face {
+  font-family: "cerealNormal";
+  src: url("../components/fonts/cereal/AirbnbCereal_W_Bk.otf");
+}
+
+@font-face {
+  font-family: "cerealDk2";
+  src: url("../components/fonts/cereal/AirbnbCereal_W_Blk.otf");
 }
 
 @font-face {
@@ -43,4 +58,9 @@ code {
 @font-face {
   font-family: "cerealExtraBold";
   src: url("../components/fonts/cereal/AirbnbCereal_W_XBd.otf");
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 50vh;
 }

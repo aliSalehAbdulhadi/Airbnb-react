@@ -8,6 +8,8 @@ module.exports = {
         cerealMedium: ["cerealMedium", "cursive"],
         cerealBold: ["cerealBold", "cursive"],
         cerealExtraBold: ["cerealExtraBold", "cursive"],
+        cerealNormal: ["cerealNormal", "cursive"],
+        cerealDk2: ["cerealDk2", "cursive"],
       },
       colors: {
         primary: "#FF5A5F",

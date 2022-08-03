@@ -1,4 +1,5 @@
 import ImageSwiper from "../swiper/imageSwiper/ImageSwiper";
+import { Link } from "react-router-dom";
 
 const HomeCard = () => {
   const images = [
@@ -22,7 +23,7 @@ const HomeCard = () => {
     "/images/image.webp",
   ];
   return (
-    <div className="h-[400px] w-[300px] cursor-pointer ">
+    <Link to="home/single" className="h-[400px] w-[300px] cursor-pointer ">
       <div className="h-[73%] rounded-xl overflow-hidden">
         <ImageSwiper url={images} />
       </div>
@@ -45,7 +46,7 @@ const HomeCard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

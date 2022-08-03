@@ -3,7 +3,7 @@ const ImageSection = () => {
     <div className="flex h-[35rem] rounded-md overflow-hidden mt-10">
       <div className="w-[50%] mr-1 ">
         <img
-          className="w-[100%] h-[100%] object-cover"
+          className="w-[100%] h-[100%] object-cover "
           src="/images/image.webp"
           alt=""
         />
@@ -12,7 +12,7 @@ const ImageSection = () => {
         {[...Array(4)].map((_, i) => (
           <img
             key={i}
-            className="w-[100%] h-[100%] object-cover"
+            className="w-[100%] h-[100%] object-cover "
             src="/images/image.webp"
             alt=""
           />

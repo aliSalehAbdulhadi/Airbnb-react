@@ -25,7 +25,7 @@ const AboutSection = () => {
                 <span className="ml-1">1 bath</span>
               </div>
             </div>
-            <div className="h-12 w-12 rounded-[50%] overflow-hidden">
+            <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden">
               <img
                 className="h-[100%] w-[100%] object-cover"
                 src="/images/image.webp"
@@ -36,24 +36,24 @@ const AboutSection = () => {
         </div>
 
         <div className="border-b-[1px] pb-10 mb-10 w-[90%] mt-10">
-          <div className="flex mb-5">
+          <div className="flex">
             <div>
               <img className="mr-2 h-8" src="/svg/badge2.svg" alt="" />
             </div>
             <div>
-              <h2 className="f font-cerealMedium">Wilhelm is a Superhost</h2>
+              <h2 className="font-cerealMedium">Wilhelm is a Superhost</h2>
               <h4 className="opacity-60 text-sm">
                 Superhosts are experienced, highly rated hosts who are committed
                 to providing great stays for guests.
               </h4>
             </div>
           </div>
-          <div className="flex">
+          <div className="flex my-5">
             <div>
               <img className="mr-3 h-7" src="/svg/pin.svg" alt="" />
             </div>
             <div>
-              <h2 className="f font-cerealMedium">Great location</h2>
+              <h2 className="font-cerealMedium">Great location</h2>
               <h4 className="opacity-60 text-sm">
                 100% of recent guests gave the location a 5-star rating.
               </h4>
@@ -103,9 +103,9 @@ const AboutSection = () => {
             <div className="border-[1.5px] min-h-[130px] min-w-[200px] rounded-lg p-3">
               <h1 className=" ml-[.60rem] font-semibold">Bedroom 2</h1>
               <div className="flex items-center">
-                <img src="svg/singleBed.svg" alt="single bed" />
-                <img src="svg/singleBed.svg" alt="single bed" />
-                <img src="svg/singleBed.svg" alt="single bed" />
+                <img src="/svg/singleBed.svg" alt="single bed" />
+                <img src="/svg/singleBed.svg" alt="single bed" />
+                <img src="/svg/singleBed.svg" alt="single bed" />
               </div>
 
               <h4 className="ml-[.60rem] font-light">3 single bed</h4>
@@ -120,34 +120,38 @@ const AboutSection = () => {
             </h1>
             <div className="grid grid-cols-2 opacity-80">
               <div className="flex items-center mb-3">
-                <img className="h-8 mr-2" src="svg/camera.svg" alt="camera" />
+                <img className="h-8 mr-2" src="/svg/camera.svg" alt="camera" />
                 <h1 className="">Security camera</h1>
               </div>
               <div className="flex items-center mb-3">
-                <img className="h-8 mr-2" src="svg/kitchen.svg" alt="kitchen" />
+                <img
+                  className="h-8 mr-2"
+                  src="/svg/kitchen.svg"
+                  alt="kitchen"
+                />
                 <h1>Kitchen</h1>
               </div>
               <div className="flex items-center mb-3">
-                <img className="h-8 mr-2" src="svg/pet.svg" alt="pet" />
+                <img className="h-8 mr-2" src="/svg/pet.svg" alt="pet" />
                 <h1>Pet allowed</h1>
               </div>
               <div className="flex items-center mb-3">
-                <img className="h-8 mr-2" src="svg/yard.svg" alt="yard" />
+                <img className="h-8 mr-2" src="/svg/yard.svg" alt="yard" />
                 <h1>Yard</h1>
               </div>
               <div className="flex items-center mb-3">
-                <img className="h-8 mr-2" src="svg/city.svg" alt="city" />
+                <img className="h-8 mr-2" src="/svg/city.svg" alt="city" />
                 <h1>City view</h1>
               </div>
               <div className="flex items-center mb-3">
-                <img className="h-8 mr-2" src="svg/washer.svg" alt="washer" />
+                <img className="h-8 mr-2" src="/svg/washer.svg" alt="washer" />
                 <h1>Washer</h1>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="">
+        <div>
           <div>
             <h1 className="mb-2 font-cerealMedium text-xl">
               Select check-in date

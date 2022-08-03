@@ -22,7 +22,11 @@ const IconsSwiper = () => {
             key={icon}
             className="flex flex-col items-center justify-center opacity-60 scale-90 cursor-pointer transition-all ease-in-out duration-500 hover:opacity-90 border-b-2 pb-2 border-white hover:border-gray-200"
           >
-            <img className="select-none " src={`svg/${icon}.svg`} alt="icons" />
+            <img
+              className="select-none "
+              src={`/svg/${icon}.svg`}
+              alt="icons"
+            />
             <div className=" mt-1 text-sm font-cerealMedium">
               {toUpperCase(icon)}
             </div>

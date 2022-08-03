@@ -13,7 +13,7 @@ const ReservationSide = () => {
   const [children, setChildren] = useState<number>(0);
   const [infants, setInfants] = useState<number>(0);
   return (
-    <div className=" w-[30%]">
+    <div className=" w-[35%]">
       <div className="border-[1.5px] rounded-lg shadow-xl sticky top-10 p-5 m-2">
         <div className="flex items-center justify-between mb-5">
           <div className="flex items-center">
