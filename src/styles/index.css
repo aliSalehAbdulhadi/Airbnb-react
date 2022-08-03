@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.btnBackground {
+  background: rgb(255, 90, 95);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 90, 95, 1) 0%,
+    rgba(187, 28, 87, 1) 52%,
+    rgba(187, 28, 87, 1) 52%
+  );
+}
+
+@font-face {
+  font-family: "cerealLight";
+  src: url("../components/fonts/cereal/AirbnbCereal_W_Lt.otf");
+}
+
+@font-face {
+  font-family: "cerealMedium";
+  src: url("../components/fonts/cereal/AirbnbCereal_W_Md.otf");
+}
+
+@font-face {
+  font-family: "cerealBold";
+  src: url("../components/fonts/cereal/AirbnbCereal_W_Bd.otf");
+}
+@font-face {
+  font-family: "cerealExtraBold";
+  src: url("../components/fonts/cereal/AirbnbCereal_W_XBd.otf");
+}
