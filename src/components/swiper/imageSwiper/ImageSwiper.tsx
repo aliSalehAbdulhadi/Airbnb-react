@@ -44,7 +44,7 @@ const ImageSwiper = ({ url }: { url: string[] }) => {
             onMouseLeave={() => setShowArrows(false)}
           >
             <div
-              className="h-[290px] border rounded-xl overflow-hidden"
+              className="h-[290px] w-[100%] border rounded-xl overflow-hidden"
               onMouseEnter={() => setShowArrows(true)}
               onMouseLeave={() => setShowArrows(false)}
             >

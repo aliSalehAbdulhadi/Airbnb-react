@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import { DateRangePicker, isInclusivelyBeforeDay } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
+import useClickOutside from "../../../../hooks/useClickOutside";
 
 const ReservationSide = () => {
   const [startDateSide, setStartDateSide] = useState<any>(null);
@@ -12,6 +13,11 @@ const ReservationSide = () => {
   const [adults, setAdults] = useState<number>(1);
   const [children, setChildren] = useState<number>(0);
   const [infants, setInfants] = useState<number>(0);
+
+  const nodeDom = useClickOutside(() => {
+    setIsVisible(false);
+  });
+
   return (
     <div className=" w-[35%]">
       <div className="border-[1.5px] rounded-lg shadow-xl sticky top-10 p-5 m-2">
@@ -28,7 +34,7 @@ const ReservationSide = () => {
             </h2>
           </div>
         </div>
-        <div className="flex flex-col items-center ">
+        <div ref={nodeDom} className="flex flex-col items-center ">
           <DateRangePicker
             startDate={startDateSide}
             startDateId="startDate"
@@ -47,8 +53,8 @@ const ReservationSide = () => {
             orientation={"horizontal"}
           />
           <div
-            className="mb-1 cursor-pointer border-[1.5px] border-t-0 rounded-b-lg px-3 py-1 w-[89.5%]"
-            onClick={() => setIsVisible(!isVisible)}
+            className="mb-1 cursor-pointer border-[1.5px] border-t-0 rounded-b-lg px-3 py-1 w-[92.5%]"
+            onClick={() => setIsVisible(true)}
           >
             <div>Guests</div>
             <div className="font-cerealLight text-sm">

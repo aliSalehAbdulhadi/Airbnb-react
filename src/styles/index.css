@@ -26,6 +26,37 @@ code {
     rgba(187, 28, 87, 1) 52%
   );
 }
+.btn-underline-hover {
+  position: relative;
+}
+
+.btn-underline-hover:hover {
+  opacity: 60%;
+}
+
+.btn-underline-hover::after {
+  content: "";
+  border-bottom: 2px solid black;
+  height: 5px;
+  width: 0%;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-underline-hover:hover::after {
+  width: 100%;
+}
+
+.btn-underline-hover:focus::after {
+  content: "";
+  border-bottom: 2px solid black;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: 25px;
+}
 
 img {
   user-select: none;
