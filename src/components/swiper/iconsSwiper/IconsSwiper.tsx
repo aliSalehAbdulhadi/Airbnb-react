@@ -5,15 +5,42 @@ import "swiper/css";
 import "swiper/css/navigation";
 import icons from "../../../data/sliderIcons.json";
 import { toUpperCase } from "../../../utilities/toUpperCase";
+import { useLayoutEffect, useState } from "react";
+import { off } from "process";
 
 const IconsSwiper = () => {
+  function useWindowSize() {
+    const [size, setSize] = useState(0);
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize(window.innerWidth);
+      }
+      window.addEventListener("resize", updateSize);
+      updateSize();
+      return () => window.removeEventListener("resize", updateSize);
+    }, []);
+    return size;
+  }
+  const innerWidth = (size: any) => {
+    if (size > 1300) {
+      return 13;
+    } else if (size > 992) {
+      return 10;
+    } else if (size > 850) {
+      return 9;
+    } else if (size > 768) {
+      return 6;
+    }
+    return 5;
+  };
+
   return (
     <div>
       <Swiper
         modules={[Navigation]}
-        slidesPerView={13}
-        slidesPerGroup={5}
-        navigation
+        slidesPerView={innerWidth(useWindowSize())}
+        slidesPerGroup={useWindowSize() > 768 ? 5 : 3}
+        navigation={useWindowSize() > 768 ? true : false}
         className={styles.swiperIcons}
         watchOverflow={true}
       >

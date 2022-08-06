@@ -5,11 +5,13 @@ import ReviewSection from "../../components/singlePage/reviewSection/ReviewSecti
 import MapSection from "../../components/singlePage/mapSection/MapSection";
 import HostInfo from "../../components/singlePage/hostInfo/HostInfo";
 import Footer from "../../components/singlePage/footer/Footer";
+import NavbarSingle from "../../components/navbars/navbarSingle/NavbarSingle";
 
 const SinglePage = () => {
   return (
-    <div className="mt-8">
-      <div className="mx-[25rem]">
+    <div className="mt-4">
+      <NavbarSingle />
+      <div className="mx-[25rem] mt-5">
         <TitleSection />
         <ImageSection />
         <AboutSection />

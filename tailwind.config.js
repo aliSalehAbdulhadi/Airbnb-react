@@ -15,6 +15,16 @@ module.exports = {
         primary: "#FF5A5F",
       },
     },
+    screens: {
+      xs: "400px",
+      sm: "640px",
+      semiSm: "777px",
+      md: "1024px",
+      lg: "1280px",
+      xl: "1300px",
+      xxl: "1450px",
+      xxxl: "1600px",
+    },
   },
   plugins: [],
 };

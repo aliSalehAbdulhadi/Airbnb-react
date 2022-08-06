@@ -1,10 +1,22 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({
+  setExpandNav,
+  expandNav,
+  children,
+}: {
+  children: React.ReactNode;
+  setExpandNav: any;
+  expandNav: boolean;
+}) => {
   return (
-    <div>
-      <Navbar />
+    <div
+      className={`${
+        expandNav
+          ? "fixed inset-0 bg-black bg-opacity-20 transition-opacity"
+          : null
+      }"`}
+    >
       {children}
     </div>
   );
