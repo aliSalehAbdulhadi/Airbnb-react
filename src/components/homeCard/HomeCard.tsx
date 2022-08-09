@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const HomeCard = () => {
   const images = [
+    "/images/image2.webp",
     "/images/image.webp",
+    "/images/image2.webp",
     "/images/image.webp",
-    "/images/image.webp",
-    "/images/image.webp",
-    "/images/image.webp",
+    "/images/image2.webp",
   ];
   return (
     <Link

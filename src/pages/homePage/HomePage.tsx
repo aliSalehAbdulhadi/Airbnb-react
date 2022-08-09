@@ -6,19 +6,21 @@ import IconsSwiper from "../../components/swiper/iconsSwiper/IconsSwiper";
 const HomePage = () => {
   return (
     <>
-      <div>
+      <div className="mx-10 sm:mx-15 md:mx-24 lg:mx-36">
         <div className="hidden semiSm:block">
-          <Navbar />
+          <Navbar singlePage={false} />
         </div>
+
         <div className="block semiSm:hidden">
           <SmallNavbar />
         </div>
       </div>
-      <div className="flex items-center flex-col mx-auto md:px-[9rem] w-auto sm:w-[800px] md:w-[1200px] lg:w-[1000px] xl:w-[1200px] xxl:w-[1600px] xxxl:w-[1900px]">
+      <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
+      <div className="flex items-center flex-col max-w-[1900px] mx-10 sm:mx-15 md:mx-24 lg:mx-36">
         <div className="mt-10 w-full">
           <IconsSwiper />
         </div>
-        <div className="mt-10 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xxl:grid-cols-4 xxxl:grid-cols-5 place-items-start mx-10">
+        <div className="mt-10 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xxl:grid-cols-4 xxxl:grid-cols-5 place-items-start">
           <HomeCard />
           <HomeCard />
           <HomeCard />

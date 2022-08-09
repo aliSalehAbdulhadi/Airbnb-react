@@ -1,6 +1,6 @@
 const SmallNavbar = () => {
   return (
-    <div className="flex items-center justify-between py-2 px-5 mx-10 border-[1px] rounded-full shadow-lg my-5 cursor-pointer">
+    <div className="flex items-center justify-between py-2 px-5 border-[1px] rounded-full shadow-lg my-5 cursor-pointer">
       <div className="flex items-center">
         <img className="opacity-70" src="/svg/search.svg" alt="search icon" />
         <div className="ml-5">
@@ -12,7 +12,7 @@ const SmallNavbar = () => {
           </div>
         </div>
       </div>
-      <img src="svg/twoArrows.svg" alt="two arrows" />
+      <img src="/svg/twoArrows.svg" alt="two arrows" />
     </div>
   );
 };

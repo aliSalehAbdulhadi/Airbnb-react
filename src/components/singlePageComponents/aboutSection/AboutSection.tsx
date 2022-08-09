@@ -11,15 +11,15 @@ const AboutSection = () => {
   const [focusedInput, setFocusedInput] = useState<any>(null);
   return (
     <div className="flex mt-10">
-      <div className="w-[70%] ">
-        <div className="w-[90%] border-b-[1px] pb-4">
+      <div className=" semiSm:w-[70%] ">
+        <div className="semiSm:w-[90%] border-b-[1px] pb-4">
           <div className="flex items-center justify-between">
-            <div>
+            <div className="w-[80%]">
               <h1 className="font-cerealMedium text-2xl">
                 Entire rental unit hosted by Wilhelm
               </h1>
               <div>
-                <span className="ml-1">5 guests</span>
+                <span className="semiSm:ml-1">5 guests</span>
                 <span className="ml-1">2 bedrooms</span>
                 <span className="ml-1">5 beds</span>
                 <span className="ml-1">1 bath</span>
@@ -28,19 +28,19 @@ const AboutSection = () => {
             <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden">
               <img
                 className="h-[100%] w-[100%] object-cover"
-                src="/images/image.webp"
+                src="/images/man.jpg"
                 alt=""
               />
             </div>
           </div>
         </div>
 
-        <div className="border-b-[1px] pb-10 mb-10 w-[90%] mt-10">
+        <div className="border-b-[1px] pb-10 mb-10 semiSm:w-[90%] mt-10">
           <div className="flex">
             <div>
               <img className="mr-2 h-8" src="/svg/badge2.svg" alt="" />
             </div>
-            <div>
+            <div className="ml-3 semiSm:ml-0">
               <h2 className="font-cerealMedium">Wilhelm is a Superhost</h2>
               <h4 className="opacity-60 text-sm">
                 Superhosts are experienced, highly rated hosts who are committed
@@ -71,7 +71,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="pb-10 border-b-[1px] w-[90%] mb-10">
+        <div className="pb-10 border-b-[1px] semiSm:w-[90%] mb-10">
           <div>
             <img className="h-6 mb-5" src="/svg/aircover.svg" alt="" />
           </div>
@@ -84,7 +84,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="pb-10 border-b-[1px] w-[90%] mb-10">
+        <div className="pb-10 border-b-[1px] semiSm:w-[90%] mb-10">
           <h1>
             Vakthusøyen is an island, about 150 meters from Henningsvær, where
             you use a small motorboat for access. Vakthusøya is an island, about
@@ -94,7 +94,7 @@ const AboutSection = () => {
           <button className="mt-3 underline font-semibold">Learn more</button>
         </div>
 
-        <div className="pb-10 border-b-[1px] w-[90%] mb-10">
+        <div className="pb-10 border-b-[1px] semiSm:w-[90%] mb-10">
           <h1 className="mb-5 font-cerealMedium text-xl">
             Where you will sleep
           </h1>
@@ -113,12 +113,12 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="pb-10 border-b-[1px] w-[90%] mb-10">
+        <div className="pb-10 border-b-[1px] semiSm:w-[90%] mb-10">
           <div>
             <h1 className="mb-5 font-cerealMedium text-xl">
               What this place offers
             </h1>
-            <div className="grid grid-cols-2 opacity-80">
+            <div className="grid grid-cols-1 semiSm:grid-cols-2 opacity-80">
               <div className="flex items-center mb-3">
                 <img className="h-8 mr-2" src="/svg/camera.svg" alt="camera" />
                 <h1 className="">Security camera</h1>
@@ -135,18 +135,21 @@ const AboutSection = () => {
                 <img className="h-8 mr-2" src="/svg/pet.svg" alt="pet" />
                 <h1>Pet allowed</h1>
               </div>
-              <div className="flex items-center mb-3">
+              <div className=" items-center mb-3 hidden semiSm:flex">
                 <img className="h-8 mr-2" src="/svg/yard.svg" alt="yard" />
                 <h1>Yard</h1>
               </div>
-              <div className="flex items-center mb-3">
+              <div className=" items-center mb-3 hidden semiSm:flex">
                 <img className="h-8 mr-2" src="/svg/city.svg" alt="city" />
                 <h1>City view</h1>
               </div>
-              <div className="flex items-center mb-3">
+              <div className=" items-center mb-3 hidden semiSm:flex">
                 <img className="h-8 mr-2" src="/svg/washer.svg" alt="washer" />
                 <h1>Washer</h1>
               </div>
+              <button className="w-full py-3 px-2 border-[1px] border-black rounded-xl mt-5 font-cerealMedium block semiSm:hidden">
+                Show all amenities
+              </button>
             </div>
           </div>
         </div>

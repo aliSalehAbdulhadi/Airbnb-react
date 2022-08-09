@@ -14,7 +14,7 @@ const ReviewSection = () => {
         </div>
         <h1>8 reviews</h1>
       </div>
-      <div className="grid grid-cols-2 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-8">
         <ReviewCard />
         <ReviewCard />
         <ReviewCard />
