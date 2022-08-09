@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const MapSection = () => {
   return (
-    <div className="h-full w-full mt-10 border-t-[1px] pt-10">
+    <div className="h-full w-full mt-10 border-t-[1px] pt-10 z-[-1]">
       <div className="mb-5 font-cerealMedium text-xl">Where You will be.</div>
       <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
         <TileLayer
