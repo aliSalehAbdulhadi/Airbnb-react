@@ -6,15 +6,23 @@ import useClickOutside from "../../../hooks/useClickOutside";
 import ExpandedNav from "../expandedNav/ExpandedNav";
 import UnexpandedNav from "../unexpandedNav/UnexpandedNav";
 import NavbarSingleSearchBar from "../navbarSingleSearchBar/NavbarSingleSearchBar";
+import UserModal from "../../modals/userModal/UserModal";
 
 const Navbar = ({ singlePage }: { singlePage: boolean }) => {
   const [expandNav, setExpandNav] = useState<boolean>(false);
-  const domNode = useClickOutside(() => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  const expandNod = useClickOutside(() => {
     setExpandNav(false);
   });
+
+  const userModalNod = useClickOutside(() => {
+    setIsVisible(false);
+  });
+
   return (
     <nav
-      ref={domNode}
+      ref={expandNod}
       className={`flex items-start pt-5 border-black  outline-none transition-all duration-300 bg-white relative ${
         expandNav ? "h-[25vh] md:h-[20vh]" : "h-[9vh]"
       }`}
@@ -58,7 +66,11 @@ const Navbar = ({ singlePage }: { singlePage: boolean }) => {
               alt="globe icon"
             />
           </button>
-          <div className="flex border rounded-full py-1 pl-2 pr-1 transition-all ease-in-out duration-200 cursor-pointer hover:shadow-lg ">
+          <div
+            ref={userModalNod}
+            onClick={() => setIsVisible(!isVisible)}
+            className="flex border rounded-full py-1 pl-2 pr-1 transition-all ease-in-out duration-200 cursor-pointer hover:shadow-lg relative"
+          >
             <button>
               <img
                 className="h-5 mr-2"
@@ -69,6 +81,13 @@ const Navbar = ({ singlePage }: { singlePage: boolean }) => {
             <button>
               <IoPersonCircleSharp size={35} color="#696969" />
             </button>
+            <div
+              className={`absolute top-14 right-0 z-[50] ${
+                isVisible ? "block" : "hidden"
+              }`}
+            >
+              <UserModal />
+            </div>
           </div>
         </div>
       </div>

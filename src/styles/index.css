@@ -3,6 +3,9 @@
 @tailwind utilities;
 @import url("~leaflet/dist/leaflet.css");
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,11 +13,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.outlineCss {
+  outline-bottom: 1px solid black;
 }
 
 .btnBackground {

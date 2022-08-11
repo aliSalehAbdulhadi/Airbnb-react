@@ -21,7 +21,7 @@ const ReservationSide = () => {
 
   return (
     <div className=" w-[35%] hidden semiSm:block">
-      <div className="border-[1.5px] rounded-lg shadow-xl sticky top-10 p-5 m-2">
+      <div className="border-[1.5px] rounded-lg shadow-xl sticky top-32 p-5 m-2">
         <div className="flex items-center justify-between mb-5">
           <div className="flex flex-col md:flex-row items-center">
             <h1 className="text-2xl font-cerealMedium mr-1">300$</h1>

@@ -28,5 +28,746 @@
     "park",
     "restaurant",
     "villa"
+  ],
+
+  "listings": [
+    {
+      "id": "1",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "6",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "9",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "10",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "11",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "12",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "13",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "14",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "15",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "16",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "17",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "18",
+      "title": "Vakthusøyen - Nybryggen - on a small island",
+      "price": "$300",
+      "image": "villa",
+      "reviews": [
+        {
+          "name": "John Doe",
+          "rating": "5",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        },
+        {
+          "name": "Jane Doe",
+          "rating": "4",
+          "image": "villa",
+          "comment": "This is a great place to stay. I would highly recommend this place."
+        }
+      ],
+      "roomInfo": {
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "beds": "2",
+        "baths": "2"
+      },
+      "coHosts": {
+        "name": "John Doe",
+        "image": "villa",
+        "reviews": [
+          {
+            "name": "John Doe",
+            "image": "villa"
+          },
+          {
+            "name": "Jane Doe",
+            "image": "villa"
+          }
+        ]
+      }
+    }
   ]
 }
