@@ -99,7 +99,7 @@ const AboutSection = () => {
             Where you will sleep
           </h1>
 
-          <div className="flex">
+          <div id="amenities" className="flex">
             <div className="border-[1.5px] min-h-[130px] min-w-[200px] rounded-lg p-3">
               <h1 className=" ml-[.60rem] font-semibold">Bedroom 2</h1>
               <div className="flex items-center">
@@ -114,7 +114,7 @@ const AboutSection = () => {
         </div>
 
         <div className="pb-10 border-b-[1px] semiSm:w-[90%] mb-10">
-          <div>
+          <div id="amenities">
             <h1 className="mb-5 font-cerealMedium text-xl">
               What this place offers
             </h1>

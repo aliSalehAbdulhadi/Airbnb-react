@@ -1,16 +1,18 @@
 import { useState, useRef } from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { v4 as uuidv4 } from "uuid";
 import styles from "../../../styles/swiper.module.scss";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useFetchImages } from "../../../utilities/fetchImages";
 
 const ImageSwiper = ({ url }: { url: string[] }) => {
   const [showArrows, setShowArrows] = useState<boolean>(false);
   const swiperImagePrevRef = useRef<HTMLDivElement>(null);
   const swiperImageNextRef = useRef<HTMLDivElement>(null);
+  const error = useFetchImages().error;
 
   return (
     <Swiper
@@ -19,7 +21,7 @@ const ImageSwiper = ({ url }: { url: string[] }) => {
       modules={[Navigation, Pagination]}
       loop={true}
       slidesPerView={1}
-      allowTouchMove={false}
+      allowTouchMove={true}
       pagination={{ clickable: false, dynamicBullets: true }}
       className={styles.swiperImages}
       watchOverflow={true}
@@ -36,27 +38,36 @@ const ImageSwiper = ({ url }: { url: string[] }) => {
         swiper.navigation.update();
       }}
     >
-      {url.map((url) => (
-        <>
-          <SwiperSlide
-            key={url}
-            onMouseEnter={() => setShowArrows(true)}
-            onMouseLeave={() => setShowArrows(false)}
-          >
-            <div
-              className="h-[290px] w-[100%] border rounded-xl overflow-hidden"
-              onMouseEnter={() => setShowArrows(true)}
-              onMouseLeave={() => setShowArrows(false)}
-            >
-              <img
-                className="select-none h-[100%] w-[100%] object-cover"
-                src={url}
-                alt="place"
-              />
-            </div>
-          </SwiperSlide>
-        </>
-      ))}
+      {useFetchImages().data.map(
+        (imageUrl: any) => (
+          console.log(imageUrl),
+          (
+            <>
+              <SwiperSlide
+                key={uuidv4()}
+                onMouseEnter={() => setShowArrows(true)}
+                onMouseLeave={() => setShowArrows(false)}
+              >
+                <div
+                  className="h-[300px] w-[350px]  border rounded-xl overflow-hidden"
+                  onMouseEnter={() => setShowArrows(true)}
+                  onMouseLeave={() => setShowArrows(false)}
+                >
+                  <img
+                    className="select-none min-h-[100%] min-w-[100%] object-cover"
+                    src={
+                      error?.name === "AxiosError" || !imageUrl.webformatURL
+                        ? "/images/image.webp"
+                        : imageUrl.webformatURL
+                    }
+                    alt="place"
+                  />
+                </div>
+              </SwiperSlide>
+            </>
+          )
+        ),
+      )}
       <div
         ref={swiperImagePrevRef}
         className={showArrows ? styles.customPrevArrow : "hidden"}

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TitleSection from "../../components/singlePageComponents/titleSections/titleSection/TitleSection";
 import ImageSection from "../../components/singlePageComponents/imageSection/ImageSection";
 import AboutSection from "../../components/singlePageComponents/aboutSection/AboutSection";
@@ -11,8 +12,14 @@ import SinglePageImageSwiper from "../../components/swiper/singlePageImageSwiper
 import TitleSmallSection from "../../components/singlePageComponents/titleSections/titleSmallSection/TitleSmallSection";
 import ReviewsSwiper from "../../components/swiper/reviewsSwiper/ReviewsSwiper";
 import FooterReservation from "../../components/singlePageComponents/footer/footerReservation/FooterReservation";
+import NavbarOnScroll from "../../components/navbars/navbarOnscroll/NavbarOnScroll";
 
 const SinglePage = () => {
+  const [scroll, setScroll] = useState<number>(0);
+  window.addEventListener("scroll", () => {
+    setScroll(window.scrollY);
+  });
+
   return (
     <>
       <div className="max-w-[1500px] mx-auto  hidden semiSm:block ">
@@ -25,9 +32,20 @@ const SinglePage = () => {
           </div>
         </div>
       </div>
+
+      <div className="md:block hidden sticky top-0 z-[50]  ">
+        <div className={`${scroll > 750 ? "block" : "hidden"}`}>
+          <NavbarOnScroll scrollY={scroll} />
+          <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
+        </div>
+      </div>
+
       <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
       <div className="flex  flex-col mx-auto  max-w-[1500px]">
-        <div className="hidden semiSm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
+        <div
+          id="photos"
+          className="hidden semiSm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48"
+        >
           <TitleSection />
         </div>
 
@@ -47,13 +65,16 @@ const SinglePage = () => {
           <AboutSection />
         </div>
 
-        <div className="hidden sm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
+        <div
+          id="reviews"
+          className="hidden sm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48"
+        >
           <ReviewSection />
         </div>
         <div className="block sm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
           <ReviewsSwiper />
         </div>
-        <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48 ">
+        <div id="map" className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48 ">
           <MapSection />
         </div>
 
