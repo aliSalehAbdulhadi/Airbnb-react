@@ -55,7 +55,7 @@ const HostInfo = ({ host, joined, totalReviews, coHosts }: hostInfo) => {
             <div className="mt-5">
               <h1 className="font-cerealMedium">Co-hosts</h1>
               <div className="flex items-center">
-                {coHosts.map((coHost) => (
+                {coHosts?.map((coHost) => (
                   <div className="flex items-center mt-3 mr-3">
                     <div className="h-10 w-10 rounded-[50%] overflow-hidden mr-3">
                       <img
@@ -86,7 +86,9 @@ const HostInfo = ({ host, joined, totalReviews, coHosts }: hostInfo) => {
               </div>
 
               <div className="mt-3">
-                <h1 className="font-cerealMedium mb-2">Ali is a Superhost</h1>
+                <h1 className="font-cerealMedium mb-2">
+                  {host} is a Superhost
+                </h1>
                 <p>
                   Superhosts are experienced, highly rated hosts who are
                   committed to providing great stays for guests.

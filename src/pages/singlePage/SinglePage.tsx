@@ -13,21 +13,19 @@ import TitleSmallSection from "../../components/singlePageComponents/titleSectio
 import ReviewsSwiper from "../../components/swiper/reviewsSwiper/ReviewsSwiper";
 import FooterReservation from "../../components/singlePageComponents/footer/footerReservation/FooterReservation";
 import NavbarOnScroll from "../../components/navbars/navbarOnscroll/NavbarOnScroll";
+import useDataBase from "../../context/dataStore/dataStore";
 import { useParams } from "react-router-dom";
-import data from "../../data/sliderIcons.json";
 
 const SinglePage = () => {
   const [scroll, setScroll] = useState<number>(0);
+  const db = useDataBase((state: any) => state.db);
+  const { id } = useParams();
+  const singleData = db.find((singleData: any) => singleData.id === id);
+
   window.addEventListener("scroll", () => {
     setScroll(window.scrollY);
   });
 
-  const { id } = useParams();
-
-  const [singleData]: any = data.listings.filter(
-    (listing) => listing.id === id,
-  );
-  console.log(singleData.coHosts);
   return (
     <>
       <div className="max-w-[1500px] mx-auto  hidden semiSm:block ">
@@ -40,14 +38,12 @@ const SinglePage = () => {
           </div>
         </div>
       </div>
-
       <div className="md:block hidden sticky top-0 z-[50]  ">
         <div className={`${scroll > 750 ? "block" : "hidden"}`}>
           <NavbarOnScroll scrollY={scroll} />
           <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
         </div>
       </div>
-
       <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
       <div className="flex  flex-col mx-auto  max-w-[1500px]">
         <div
@@ -55,10 +51,10 @@ const SinglePage = () => {
           className="hidden semiSm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48"
         >
           <TitleSection
-            title={singleData.title}
-            rating={singleData.rating}
-            reviewLength={singleData.reviews.length}
-            location={singleData.location}
+            title={singleData?.title}
+            rating={singleData?.rating}
+            reviewLength={singleData?.reviews?.length}
+            location={singleData?.location}
           />
         </div>
 
@@ -72,15 +68,21 @@ const SinglePage = () => {
 
         <div className="block semiSm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
           <TitleSmallSection
-            title={singleData.title}
-            rating={singleData.rating}
-            reviewLength={singleData.reviews.length}
-            location={singleData.location}
+            title={singleData?.title}
+            rating={singleData?.rating}
+            reviewLength={singleData?.reviews?.length}
+            location={singleData?.location}
           />
         </div>
 
         <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
-          <AboutSection roomInfo={singleData.roomInfo} host={singleData.host} />
+          <AboutSection
+            roomInfo={singleData?.roomInfo}
+            host={singleData?.host}
+            price={singleData?.price}
+            reviews={singleData?.reviews}
+            rating={singleData?.rating}
+          />
         </div>
 
         <div
@@ -88,14 +90,14 @@ const SinglePage = () => {
           className="hidden sm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48"
         >
           <ReviewSection
-            reviews={singleData.reviews}
-            rating={singleData.rating}
+            reviews={singleData?.reviews}
+            rating={singleData?.rating}
           />
         </div>
         <div className="block sm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
           <ReviewsSwiper
-            reviews={singleData.reviews}
-            rating={singleData.rating}
+            reviews={singleData?.reviews}
+            rating={singleData?.rating}
           />
         </div>
         <div id="map" className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48 ">
@@ -104,10 +106,10 @@ const SinglePage = () => {
 
         <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
           <HostInfo
-            host={singleData.title}
-            totalReviews={singleData.totalReviews}
-            coHosts={singleData.coHosts}
-            joined={singleData.joined}
+            host={singleData?.host}
+            totalReviews={singleData?.totalReview}
+            coHosts={singleData?.coHosts}
+            joined={singleData?.joined}
           />
         </div>
       </div>

@@ -11,7 +11,6 @@ const ImageSwiper = ({ images, error }: { images: string[]; error: any }) => {
   const [showArrows, setShowArrows] = useState<boolean>(false);
   const swiperImagePrevRef = useRef<HTMLDivElement>(null);
   const swiperImageNextRef = useRef<HTMLDivElement>(null);
-  console.log(images);
   return (
     <Swiper
       onMouseEnter={() => setShowArrows(true)}
@@ -36,7 +35,7 @@ const ImageSwiper = ({ images, error }: { images: string[]; error: any }) => {
         swiper.navigation.update();
       }}
     >
-      {images.map((image: any) => (
+      {images?.map((image: any) => (
         <>
           <SwiperSlide
             key={uuidv4()}

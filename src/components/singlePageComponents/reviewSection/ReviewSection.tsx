@@ -13,15 +13,15 @@ const ReviewSection = ({ reviews, rating }: reviewSection) => {
           />
           <span>{rating}</span>,
         </div>
-        <h1>{reviews.length} reviews</h1>
+        <h1>{reviews?.length} reviews</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 mt-8">
-        {reviews.map((review) => (
+        {reviews?.map((review) => (
           <ReviewCard review={review} />
         ))}
       </div>
       <button className="border-[1px] border-black py-3 px-4 rounded-lg mt-5 hover:bg-gray-50">
-        Show all {reviews.length} reviews
+        Show all {reviews?.length} reviews
       </button>
     </div>
   );
