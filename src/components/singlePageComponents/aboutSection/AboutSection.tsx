@@ -6,7 +6,13 @@ import "react-dates/lib/css/_datepicker.css";
 import ReservationSide from "./reservationSide/ReservationSide";
 import { aboutSection } from "../../../data/interfaces/interfaces";
 
-const AboutSection = ({ roomInfo, host }: aboutSection) => {
+const AboutSection = ({
+  roomInfo,
+  host,
+  price,
+  rating,
+  reviews,
+}: aboutSection) => {
   const [startDate, setStartDate] = useState<any>(null);
   const [endDate, setEndDate] = useState<any>(null);
   const [focusedInput, setFocusedInput] = useState<any>(null);
@@ -20,10 +26,10 @@ const AboutSection = ({ roomInfo, host }: aboutSection) => {
                 Entire rental unit hosted by {host}
               </h1>
               <div>
-                <span className="semiSm:ml-1">{roomInfo.guests} guests</span>
-                <span className="ml-1">{roomInfo.bedrooms} bedrooms</span>
-                <span className="ml-1">{roomInfo.beds} beds</span>
-                <span className="ml-1">{roomInfo.bathrooms} bath</span>
+                <span className="semiSm:ml-1">{roomInfo?.guests} guests</span>
+                <span className="ml-1">{roomInfo?.bedrooms} bedrooms</span>
+                <span className="ml-1">{roomInfo?.beds} beds</span>
+                <span className="ml-1">{roomInfo?.bathrooms} bath</span>
               </div>
             </div>
             <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden">
@@ -185,7 +191,7 @@ const AboutSection = ({ roomInfo, host }: aboutSection) => {
           </div>
         </div>
       </div>
-      <ReservationSide />
+      <ReservationSide reviews={reviews} rating={rating} price={price} />
     </div>
   );
 };

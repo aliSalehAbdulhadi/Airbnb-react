@@ -3,7 +3,7 @@ import axiosRetry from "axios-retry";
 import { useEffect, useState } from "react";
 
 export const useFetchImages = (): any => {
-  const [data, setData] = useState<any>([]);
+  const [images, setImages] = useState<any>([]);
   const [error, setError] = useState<any>([]);
   const randomNum = Math.floor(Math.random() * 10);
   const types = [
@@ -29,7 +29,7 @@ export const useFetchImages = (): any => {
         }&image_type=photo&pretty=true&per_page=${randomNum + 3}&order=latest`,
       )
       .then((res) => {
-        setData(res.data.hits);
+        setImages(res.data.hits);
       })
       .catch((err) => {
         if (err.response.status !== 200) {
@@ -37,5 +37,5 @@ export const useFetchImages = (): any => {
         }
       });
   }, []);
-  return { data, error };
+  return { images, error };
 };

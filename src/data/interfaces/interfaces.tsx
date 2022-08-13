@@ -22,6 +22,9 @@ export interface aboutSection {
     baths: string;
   };
   host: string;
+  price: string;
+  reviews: string;
+  rating: string;
 }
 
 export interface reviewSection {
@@ -48,11 +51,17 @@ export interface reviewCard {
 
 export interface hostInfo {
   host: string;
-  totalReviews: string;
+  totalReviews: any;
   joined: string;
   coHosts: {
     name: string;
     image?: string;
     reviews: { name: string; image?: string }[];
   }[];
+}
+
+export interface reservationSide {
+  price: string;
+  rating: string;
+  reviews: string;
 }

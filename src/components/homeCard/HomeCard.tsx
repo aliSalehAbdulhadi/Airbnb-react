@@ -1,10 +1,11 @@
-import ImageSwiper from "../swiper/imageSwiper/ImageSwiper";
 import { Link } from "react-router-dom";
+import ImageSwiper from "../swiper/imageSwiper/ImageSwiper";
 import { useFetchImages } from "../../utilities/fetchImages";
 import { homeCard } from "../../data/interfaces/interfaces";
 
+
 const HomeCard = ({ title, host, date, price, id }: homeCard) => {
-  const { data, error } = useFetchImages();
+  const { images, error } = useFetchImages();
 
   return (
     <Link
@@ -12,7 +13,7 @@ const HomeCard = ({ title, host, date, price, id }: homeCard) => {
       className="max-w-[100%] max-h-[100%] cursor-pointer mr-5 mb-5"
     >
       <div className="h-[73%] rounded-xl overflow-hidden">
-        <ImageSwiper images={data} error={error} />
+        <ImageSwiper images={images} error={error} />
       </div>
       <div className="mt-2">
         <div className="flex justify-between">

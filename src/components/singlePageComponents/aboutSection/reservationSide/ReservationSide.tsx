@@ -4,8 +4,9 @@ import { DateRangePicker, isInclusivelyBeforeDay } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import useClickOutside from "../../../../hooks/useClickOutside";
 import ReservationModal from "./reservationModal/ReservationModal";
+import { reservationSide } from "../../../../data/interfaces/interfaces";
 
-const ReservationSide = () => {
+const ReservationSide = ({ price, rating, reviews }: reservationSide) => {
   const [startDateSide, setStartDateSide] = useState<any>(null);
   const [endDateSide, setEndDateSide] = useState<any>(null);
   const [focusedInputSide, setFocusedInputSide] = useState<any>(null);
@@ -24,16 +25,16 @@ const ReservationSide = () => {
       <div className="border-[1.5px] rounded-lg shadow-xl sticky top-32 p-5 m-2">
         <div className="flex items-center justify-between mb-5">
           <div className="flex flex-col md:flex-row items-center">
-            <h1 className="text-2xl font-cerealMedium mr-1">300$</h1>
+            <h1 className="text-2xl font-cerealMedium mr-1">{price}</h1>
             <span className="font-light">night</span>
           </div>
           <div className="flex flex-col md:flex-row items-center">
             <div className="flex items-center">
               <img className="h-5 mb-[.20rem]" src="/svg/star.svg" alt="star" />
-              <h1>5.0</h1>
+              <h1>{Number(rating).toFixed(1)}</h1>
             </div>
             <h2 className="ml-2 opacity-60 underline cursor-pointer">
-              8 reviews
+              {reviews?.length} reviews
             </h2>
           </div>
         </div>

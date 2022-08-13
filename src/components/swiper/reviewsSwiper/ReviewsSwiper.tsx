@@ -17,9 +17,9 @@ const ReviewsSwiper = ({ reviews, rating }: reviewSection) => {
               src="/svg/star.svg"
               alt="star"
             />
-            <span>5.0</span>,
+            <span>{rating}</span>,
           </div>
-          <h1>8 reviews</h1>
+          <h1>{reviews?.length} reviews</h1>
         </div>
         <Swiper
           modules={[Navigation]}
@@ -30,7 +30,7 @@ const ReviewsSwiper = ({ reviews, rating }: reviewSection) => {
           setWrapperSize={true}
           centeredSlides={true}
         >
-          {reviews.map((review) => (
+          {reviews?.map((review) => (
             <SwiperSlide>
               <div className="border-[1px] rounded-xl mr-2">
                 <ReviewCard review={review} />
