@@ -1,6 +1,6 @@
-import React from "react";
+import { hostInfo } from "../../../data/interfaces/interfaces";
 
-const HostInfo = () => {
+const HostInfo = ({ host, joined, totalReviews, coHosts }: hostInfo) => {
   return (
     <div className="flex flex-col semiSm:flex-row items-center">
       <div className=" semiSm:w-[60%] ">
@@ -14,10 +14,8 @@ const HostInfo = () => {
               />
             </div>
             <div>
-              <h1 className="font-cerealMedium text-xl">
-                Hosted by Bardley-Anne
-              </h1>
-              <h2 className="text-sm opacity-60">Join in April 2015</h2>
+              <h1 className="font-cerealMedium text-xl">Hosted by {host}</h1>
+              <h2 className="text-sm opacity-60">Join in {joined}</h2>
             </div>
           </div>
           <div className="semiSm:mr-[7rem]">
@@ -28,7 +26,7 @@ const HostInfo = () => {
                   src="/svg/star.svg"
                   alt="star"
                 />
-                <h1>40 review</h1>
+                <h1>{totalReviews} review</h1>
               </div>
               <div className="flex mr-5 my-5 semiSm:my-0">
                 <img
@@ -57,30 +55,20 @@ const HostInfo = () => {
             <div className="mt-5">
               <h1 className="font-cerealMedium">Co-hosts</h1>
               <div className="flex items-center">
-                <div className="flex items-center mt-3 mr-5">
-                  <div className="h-10 w-10 rounded-[50%] overflow-hidden mr-3">
-                    <img
-                      className="h-[100%] w-[100%] object-cover"
-                      src="/images/man2.jpg"
-                      alt=""
-                    />
+                {coHosts.map((coHost) => (
+                  <div className="flex items-center mt-3 mr-3">
+                    <div className="h-10 w-10 rounded-[50%] overflow-hidden mr-3">
+                      <img
+                        className="h-[100%] w-[100%] object-cover"
+                        src="/images/girl2.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <h1>{coHost.name}</h1>
+                    </div>
                   </div>
-                  <div>
-                    <h1>Ali Saleh</h1>
-                  </div>
-                </div>
-                <div className="flex items-center mt-3">
-                  <div className="h-10 w-10 rounded-[50%] overflow-hidden mr-3">
-                    <img
-                      className="h-[100%] w-[100%] object-cover"
-                      src="/images/girl2.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <h1>Fatima Saleh</h1>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 

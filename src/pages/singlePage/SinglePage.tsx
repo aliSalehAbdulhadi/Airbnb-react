@@ -13,6 +13,8 @@ import TitleSmallSection from "../../components/singlePageComponents/titleSectio
 import ReviewsSwiper from "../../components/swiper/reviewsSwiper/ReviewsSwiper";
 import FooterReservation from "../../components/singlePageComponents/footer/footerReservation/FooterReservation";
 import NavbarOnScroll from "../../components/navbars/navbarOnscroll/NavbarOnScroll";
+import { useParams } from "react-router-dom";
+import data from "../../data/sliderIcons.json";
 
 const SinglePage = () => {
   const [scroll, setScroll] = useState<number>(0);
@@ -20,6 +22,12 @@ const SinglePage = () => {
     setScroll(window.scrollY);
   });
 
+  const { id } = useParams();
+
+  const [singleData]: any = data.listings.filter(
+    (listing) => listing.id === id,
+  );
+  console.log(singleData.coHosts);
   return (
     <>
       <div className="max-w-[1500px] mx-auto  hidden semiSm:block ">
@@ -46,7 +54,12 @@ const SinglePage = () => {
           id="photos"
           className="hidden semiSm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48"
         >
-          <TitleSection />
+          <TitleSection
+            title={singleData.title}
+            rating={singleData.rating}
+            reviewLength={singleData.reviews.length}
+            location={singleData.location}
+          />
         </div>
 
         <div className="hidden semiSm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
@@ -58,28 +71,44 @@ const SinglePage = () => {
         </div>
 
         <div className="block semiSm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
-          <TitleSmallSection />
+          <TitleSmallSection
+            title={singleData.title}
+            rating={singleData.rating}
+            reviewLength={singleData.reviews.length}
+            location={singleData.location}
+          />
         </div>
 
         <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
-          <AboutSection />
+          <AboutSection roomInfo={singleData.roomInfo} host={singleData.host} />
         </div>
 
         <div
           id="reviews"
           className="hidden sm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48"
         >
-          <ReviewSection />
+          <ReviewSection
+            reviews={singleData.reviews}
+            rating={singleData.rating}
+          />
         </div>
         <div className="block sm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
-          <ReviewsSwiper />
+          <ReviewsSwiper
+            reviews={singleData.reviews}
+            rating={singleData.rating}
+          />
         </div>
         <div id="map" className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48 ">
           <MapSection />
         </div>
 
         <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
-          <HostInfo />
+          <HostInfo
+            host={singleData.title}
+            totalReviews={singleData.totalReviews}
+            coHosts={singleData.coHosts}
+            joined={singleData.joined}
+          />
         </div>
       </div>
       <Footer />
