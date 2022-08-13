@@ -4,8 +4,9 @@ import moment from "moment";
 import { DateRangePicker, isInclusivelyBeforeDay } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import ReservationSide from "./reservationSide/ReservationSide";
+import { aboutSection } from "../../../data/interfaces/interfaces";
 
-const AboutSection = () => {
+const AboutSection = ({ roomInfo, host }: aboutSection) => {
   const [startDate, setStartDate] = useState<any>(null);
   const [endDate, setEndDate] = useState<any>(null);
   const [focusedInput, setFocusedInput] = useState<any>(null);
@@ -16,13 +17,13 @@ const AboutSection = () => {
           <div className="flex items-center justify-between">
             <div className="w-[80%]">
               <h1 className="font-cerealMedium text-2xl">
-                Entire rental unit hosted by Wilhelm
+                Entire rental unit hosted by {host}
               </h1>
               <div>
-                <span className="semiSm:ml-1">5 guests</span>
-                <span className="ml-1">2 bedrooms</span>
-                <span className="ml-1">5 beds</span>
-                <span className="ml-1">1 bath</span>
+                <span className="semiSm:ml-1">{roomInfo.guests} guests</span>
+                <span className="ml-1">{roomInfo.bedrooms} bedrooms</span>
+                <span className="ml-1">{roomInfo.beds} beds</span>
+                <span className="ml-1">{roomInfo.bathrooms} bath</span>
               </div>
             </div>
             <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden">
@@ -41,7 +42,7 @@ const AboutSection = () => {
               <img className="mr-2 h-8" src="/svg/badge2.svg" alt="" />
             </div>
             <div className="ml-3 semiSm:ml-0">
-              <h2 className="font-cerealMedium">Wilhelm is a Superhost</h2>
+              <h2 className="font-cerealMedium">{host} is a Superhost</h2>
               <h4 className="opacity-60 text-sm">
                 Superhosts are experienced, highly rated hosts who are committed
                 to providing great stays for guests.

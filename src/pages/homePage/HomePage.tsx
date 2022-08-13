@@ -2,7 +2,7 @@ import HomeCard from "../../components/homeCard/HomeCard";
 import Navbar from "../../components/navbars/navbar/Navbar";
 import SmallNavbar from "../../components/navbars/smalNavbar/SmallNavbar";
 import IconsSwiper from "../../components/swiper/iconsSwiper/IconsSwiper";
-
+import data from "../../data/sliderIcons.json";
 const HomePage = () => {
   return (
     <>
@@ -21,31 +21,17 @@ const HomePage = () => {
           <IconsSwiper />
         </div>
         <div className="mt-10 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xxl:grid-cols-4 xxxl:grid-cols-5 place-items-start">
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
-          <HomeCard />
+          {data.listings.map((listing) => {
+            return (
+              <HomeCard
+                title={listing.title}
+                host={listing.host}
+                price={listing.price}
+                date={listing.id}
+                id={listing.id}
+              />
+            );
+          })}
         </div>
       </div>
     </>

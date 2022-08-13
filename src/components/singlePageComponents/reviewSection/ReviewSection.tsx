@@ -1,6 +1,7 @@
+import { reviewSection } from "../../../data/interfaces/interfaces";
 import ReviewCard from "./reviewCard/ReviewCard";
 
-const ReviewSection = () => {
+const ReviewSection = ({ reviews, rating }: reviewSection) => {
   return (
     <div className="mt-10 pt-10 border-t-[1px]">
       <div className="mb-5 font-cerealMedium text-xl flex items-center">
@@ -10,20 +11,17 @@ const ReviewSection = () => {
             src="/svg/star.svg"
             alt="star"
           />
-          <span>5.0</span>,
+          <span>{rating}</span>,
         </div>
-        <h1>8 reviews</h1>
+        <h1>{reviews.length} reviews</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 mt-8">
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
+        {reviews.map((review) => (
+          <ReviewCard review={review} />
+        ))}
       </div>
       <button className="border-[1px] border-black py-3 px-4 rounded-lg mt-5 hover:bg-gray-50">
-        Show all 8 reviews
+        Show all {reviews.length} reviews
       </button>
     </div>
   );

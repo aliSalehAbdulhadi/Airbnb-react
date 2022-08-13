@@ -4,8 +4,9 @@ import styles from "../../../styles/swiper.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import ReviewCard from "../../singlePageComponents/reviewSection/reviewCard/ReviewCard";
+import { reviewSection } from "../../../data/interfaces/interfaces";
 
-const ReviewsSwiper = () => {
+const ReviewsSwiper = ({ reviews, rating }: reviewSection) => {
   return (
     <div>
       <div className="mt-10 pt-10 border-t-[1px]">
@@ -29,26 +30,13 @@ const ReviewsSwiper = () => {
           setWrapperSize={true}
           centeredSlides={true}
         >
-          <SwiperSlide>
-            <div className="border-[1px] rounded-xl mr-2">
-              <ReviewCard />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="border-[1px] rounded-xl mx-2">
-              <ReviewCard />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="border-[1px] rounded-xl mx-2">
-              <ReviewCard />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="border-[1px] rounded-xl mx-2">
-              <ReviewCard />
-            </div>
-          </SwiperSlide>
+          {reviews.map((review) => (
+            <SwiperSlide>
+              <div className="border-[1px] rounded-xl mr-2">
+                <ReviewCard review={review} />
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
