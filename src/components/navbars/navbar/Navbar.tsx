@@ -1,17 +1,20 @@
-import { useState } from "react";
-import { IoPersonCircleSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import { SiAirbnb } from "react-icons/si";
-import useClickOutside from "../../../hooks/useClickOutside";
-import ExpandedNav from "../expandedNav/ExpandedNav";
-import UnexpandedNav from "../unexpandedNav/UnexpandedNav";
-import NavbarSingleSearchBar from "../navbarSingleSearchBar/NavbarSingleSearchBar";
-import UserModal from "../../modals/userModal/UserModal";
+import { useState } from 'react';
+import { IoPersonCircleSharp } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
+import { SiAirbnb } from 'react-icons/si';
+import useClickOutside from '../../../hooks/useClickOutside';
+import ExpandedNav from '../expandedNav/ExpandedNav';
+import UnexpandedNav from '../unexpandedNav/UnexpandedNav';
+import NavbarSingleSearchBar from '../navbarSingleSearchBar/NavbarSingleSearchBar';
+import UserModal from '../../modals/userModal/UserModal';
+import useLoading from '../../../context/loading/loading';
+import useSearchSwiper from '../../../context/searchSwiper/searchSwiper';
 
 const Navbar = ({ singlePage }: { singlePage: boolean }) => {
   const [expandNav, setExpandNav] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
-
+  const clickedSwiper = useSearchSwiper((state: any) => state.clickedSwiper);
+  const setLoadingHome = useLoading((state: any) => state.setLoadingHome);
   const expandNod = useClickOutside(() => {
     setExpandNav(false);
   });
@@ -24,11 +27,18 @@ const Navbar = ({ singlePage }: { singlePage: boolean }) => {
     <nav
       ref={expandNod}
       className={`flex items-start pt-5 border-black  outline-none transition-all duration-300 bg-white relative ${
-        expandNav ? "h-[25vh] md:h-[20vh]" : "h-[9vh]"
+        expandNav ? 'h-[25vh] md:h-[20vh]' : 'h-[9vh]'
       }`}
     >
       <div className={`flex items-center justify-between w-full `}>
-        <Link to="/" className="hidden md:block">
+        <Link
+          onClick={() => {
+            setLoadingHome(true);
+            clickedSwiper('');
+          }}
+          to="/"
+          className="hidden md:block"
+        >
           <img
             className="h-8 cursor-pointer self-center mt-1 "
             src="/svg/airbnb.svg"
@@ -83,7 +93,7 @@ const Navbar = ({ singlePage }: { singlePage: boolean }) => {
             </button>
             <div
               className={`absolute top-14 right-0 z-[50] ${
-                isVisible ? "block" : "hidden"
+                isVisible ? 'block' : 'hidden'
               }`}
             >
               <UserModal />

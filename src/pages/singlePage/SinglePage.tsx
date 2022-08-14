@@ -1,20 +1,20 @@
-import { useState } from "react";
-import TitleSection from "../../components/singlePageComponents/titleSections/titleSection/TitleSection";
-import ImageSection from "../../components/singlePageComponents/imageSection/ImageSection";
-import AboutSection from "../../components/singlePageComponents/aboutSection/AboutSection";
-import ReviewSection from "../../components/singlePageComponents/reviewSection/ReviewSection";
-import MapSection from "../../components/singlePageComponents/mapSection/MapSection";
-import HostInfo from "../../components/singlePageComponents/hostInfo/HostInfo";
-import Footer from "../../components/singlePageComponents/footer/Footer";
-import Navbar from "../../components/navbars/navbar/Navbar";
-import SmallNavbar from "../../components/navbars/smalNavbar/SmallNavbar";
-import SinglePageImageSwiper from "../../components/swiper/singlePageImageSwiper/SinglePageImageSwiper";
-import TitleSmallSection from "../../components/singlePageComponents/titleSections/titleSmallSection/TitleSmallSection";
-import ReviewsSwiper from "../../components/swiper/reviewsSwiper/ReviewsSwiper";
-import FooterReservation from "../../components/singlePageComponents/footer/footerReservation/FooterReservation";
-import NavbarOnScroll from "../../components/navbars/navbarOnscroll/NavbarOnScroll";
-import useDataBase from "../../context/dataStore/dataStore";
-import { useParams } from "react-router-dom";
+import { useState } from 'react';
+import TitleSection from '../../components/singlePageComponents/titleSections/titleSection/TitleSection';
+import ImageSection from '../../components/singlePageComponents/imageSection/ImageSection';
+import AboutSection from '../../components/singlePageComponents/aboutSection/AboutSection';
+import ReviewSection from '../../components/singlePageComponents/reviewSection/ReviewSection';
+import MapSection from '../../components/singlePageComponents/mapSection/MapSection';
+import HostInfo from '../../components/singlePageComponents/hostInfo/HostInfo';
+import Footer from '../../components/singlePageComponents/footer/Footer';
+import Navbar from '../../components/navbars/navbar/Navbar';
+import SmallNavbar from '../../components/navbars/smalNavbar/SmallNavbar';
+import SinglePageImageSwiper from '../../components/swiper/singlePageImageSwiper/SinglePageImageSwiper';
+import TitleSmallSection from '../../components/singlePageComponents/titleSections/titleSmallSection/TitleSmallSection';
+import ReviewsSwiper from '../../components/swiper/reviewsSwiper/ReviewsSwiper';
+import FooterReservation from '../../components/singlePageComponents/footer/footerReservation/FooterReservation';
+import NavbarOnScroll from '../../components/navbars/navbarOnscroll/NavbarOnScroll';
+import useDataBase from '../../context/dataStore/dataStore';
+import { useParams } from 'react-router-dom';
 
 const SinglePage = () => {
   const [scroll, setScroll] = useState<number>(0);
@@ -22,7 +22,7 @@ const SinglePage = () => {
   const { id } = useParams();
   const singleData = db.find((singleData: any) => singleData.id === id);
 
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     setScroll(window.scrollY);
   });
 
@@ -39,7 +39,7 @@ const SinglePage = () => {
         </div>
       </div>
       <div className="md:block hidden sticky top-0 z-[50]  ">
-        <div className={`${scroll > 750 ? "block" : "hidden"}`}>
+        <div className={`${scroll > 750 ? 'block' : 'hidden'}`}>
           <NavbarOnScroll scrollY={scroll} />
           <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
         </div>
@@ -101,7 +101,7 @@ const SinglePage = () => {
           />
         </div>
         <div id="map" className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48 ">
-          <MapSection />
+          <MapSection location={singleData?.location} />
         </div>
 
         <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">

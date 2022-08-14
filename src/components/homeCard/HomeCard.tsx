@@ -3,8 +3,7 @@ import ImageSwiper from "../swiper/imageSwiper/ImageSwiper";
 import { useFetchImages } from "../../utilities/fetchImages";
 import { homeCard } from "../../data/interfaces/interfaces";
 
-
-const HomeCard = ({ title, host, date, price, id }: homeCard) => {
+const HomeCard = ({ location, host, date, price, id, rating }: homeCard) => {
   const { images, error } = useFetchImages();
 
   return (
@@ -17,10 +16,10 @@ const HomeCard = ({ title, host, date, price, id }: homeCard) => {
       </div>
       <div className="mt-2">
         <div className="flex justify-between">
-          <h1 className="font-cerealMedium">{title}</h1>
+          <h1 className="font-cerealMedium">{location}</h1>
           <h2 className="font-cerealLight flex items-center justify-center">
             <img className="h-4 mr-1 mb-[.15rem]" src="/svg/star.svg" alt="" />
-            4.5
+            {rating}
           </h2>
         </div>
         <div className="flex flex-col">

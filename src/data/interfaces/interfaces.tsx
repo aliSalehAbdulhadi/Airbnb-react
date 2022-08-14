@@ -1,9 +1,10 @@
 export interface homeCard {
   id: string;
-  title: string;
+  location: string;
   host: string;
   price: string;
   date: string;
+  rating: string;
 }
 
 export interface titleSection {
