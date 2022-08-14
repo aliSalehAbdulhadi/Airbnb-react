@@ -1,7 +1,11 @@
-import { reviewSection } from "../../../data/interfaces/interfaces";
-import ReviewCard from "./reviewCard/ReviewCard";
+import { v4 as uuidv4 } from 'uuid';
+import { reviewSection } from '../../../data/interfaces/interfaces';
+import ReviewCard from './reviewCard/ReviewCard';
+import { FetchImages } from '../../../utilities/fetchImages';
 
 const ReviewSection = ({ reviews, rating }: reviewSection) => {
+  const { images } = FetchImages(5, '');
+
   return (
     <div className="mt-10 pt-10 border-t-[1px]">
       <div className="mb-5 font-cerealMedium text-xl flex items-center">
@@ -16,8 +20,12 @@ const ReviewSection = ({ reviews, rating }: reviewSection) => {
         <h1>{reviews?.length} reviews</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 mt-8">
-        {reviews?.map((review) => (
-          <ReviewCard review={review} />
+        {reviews?.map((review, i) => (
+          <ReviewCard
+            key={uuidv4()}
+            image={images[i]?.webformatURL}
+            review={review}
+          />
         ))}
       </div>
       <button className="border-[1px] border-black py-3 px-4 rounded-lg mt-5 hover:bg-gray-50">

@@ -1,16 +1,15 @@
-import { Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { v4 as uuidv4 } from "uuid";
-import { useEffect } from "react";
-import styles from "../../../styles/swiper.module.scss";
-import "swiper/css";
-import "swiper/css/navigation";
-import icons from "../../../data/sliderIcons.json";
-import { toUpperCase } from "../../../utilities/toUpperCase";
-import useWindowSize from "../../../utilities/useWindowsSize";
-import useSearchSwiper from "../../../context/searchSwiper/searchSwiper";
-import useLoading from "../../../context/loading/loading";
-import { stat } from "fs";
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { v4 as uuidv4 } from 'uuid';
+import { useEffect } from 'react';
+import styles from '../../../styles/swiper.module.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import icons from '../../../data/sliderIcons.json';
+import { toUpperCase } from '../../../utilities/toUpperCase';
+import useWindowSize from '../../../hooks/useWindowsSize';
+import useSearchSwiper from '../../../context/searchSwiper/searchSwiper';
+import useLoading from '../../../context/loading/loading';
 
 const IconsSwiper = () => {
   useWindowSize();
@@ -40,7 +39,7 @@ const IconsSwiper = () => {
     } else if (size > 768) {
       return 6;
     }
-    return 5;
+    return 4;
   };
 
   return (
@@ -58,8 +57,8 @@ const IconsSwiper = () => {
             key={uuidv4()}
             className={`flex flex-col items-center justify-center opacity-60 scale-90 cursor-pointer transition-all ease-in-out duration-500 hover:opacity-90 border-b-2 pb-2 border-white  ${
               icon === currSwiper
-                ? "opacity-90 border-gray-800"
-                : "hover:border-gray-200"
+                ? 'opacity-90 border-gray-800'
+                : 'hover:border-gray-200'
             }`}
           >
             {loadingIcons ? (
@@ -77,7 +76,7 @@ const IconsSwiper = () => {
                   clickedSwiper(icon);
                   setLoadingHome(true);
                 }}
-                className="flex flex-col items-center justify-center"
+                className="flex flex-col items-center justify-center scale-90 semiSm:scale-100"
               >
                 <img
                   className="select-none "

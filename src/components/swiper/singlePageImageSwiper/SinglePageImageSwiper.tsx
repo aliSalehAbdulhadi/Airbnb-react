@@ -1,11 +1,15 @@
-import { Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "../../../styles/swiper.module.scss";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
+import styles from '../../../styles/swiper.module.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { FetchImages } from '../../../utilities/fetchImages';
 
 const SinglePageImageSwiper = () => {
+  const { images } = FetchImages(10, '');
+
   return (
     <div className="relative">
       <Link to="/" className="absolute top-5 left-5 z-50">
@@ -36,24 +40,20 @@ const SinglePageImageSwiper = () => {
         watchOverflow={true}
         setWrapperSize={true}
       >
-        <SwiperSlide className="flex flex-col items-center justify-center  ">
-          <div className="h-[50vh] w-[100vw]">
-            <img
-              className="w-[100%] h-[100%] object-cover cursor-pointer"
-              src="/images/image2.webp"
-              alt=""
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="flex flex-col items-center justify-center ">
-          <div className="h-[50vh] w-[100vw]">
-            <img
-              className="w-[100%] h-[100%] object-cover cursor-pointer"
-              src="/images/image.webp"
-              alt=""
-            />
-          </div>
-        </SwiperSlide>
+        {images.map((image: any) => (
+          <SwiperSlide
+            key={uuidv4()}
+            className="flex flex-col items-center justify-center  "
+          >
+            <div className="h-[50vh] w-[100vw]">
+              <img
+                className="w-[100%] h-[100%] object-cover cursor-pointer"
+                src={image?.webformatURL}
+                alt=""
+              />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

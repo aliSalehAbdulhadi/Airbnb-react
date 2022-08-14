@@ -1,11 +1,11 @@
-import { useState, useRef } from "react";
-import { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { v4 as uuidv4 } from "uuid";
-import styles from "../../../styles/swiper.module.scss";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { useState, useRef } from 'react';
+import { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { v4 as uuidv4 } from 'uuid';
+import styles from '../../../styles/swiper.module.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const ImageSwiper = ({ images, error }: { images: string[]; error: any }) => {
   const [showArrows, setShowArrows] = useState<boolean>(false);
@@ -36,31 +36,27 @@ const ImageSwiper = ({ images, error }: { images: string[]; error: any }) => {
       }}
     >
       {images?.map((image: any) => (
-        <>
-          <SwiperSlide
-            key={uuidv4()}
+        <SwiperSlide
+          key={uuidv4()}
+          onMouseEnter={() => setShowArrows(true)}
+          onMouseLeave={() => setShowArrows(false)}
+        >
+          <div
+            className="h-[300px] min-w-[350px]  border rounded-xl overflow-hidden"
             onMouseEnter={() => setShowArrows(true)}
             onMouseLeave={() => setShowArrows(false)}
           >
-            <div
-              className="h-[300px] min-w-[350px]  border rounded-xl overflow-hidden"
-              onMouseEnter={() => setShowArrows(true)}
-              onMouseLeave={() => setShowArrows(false)}
-            >
-              <img
-                className="select-none min-h-[100%] min-w-[100%] object-cover"
-                src={
-                  error?.response ? "/images/image.webp" : image.webformatURL
-                }
-                alt="place"
-              />
-            </div>
-          </SwiperSlide>
-        </>
+            <img
+              className="select-none min-h-[100%] min-w-[100%] object-cover"
+              src={error?.response ? '/images/image.webp' : image.webformatURL}
+              alt="place"
+            />
+          </div>
+        </SwiperSlide>
       ))}
       <div
         ref={swiperImagePrevRef}
-        className={showArrows ? styles.customPrevArrow : "hidden"}
+        className={showArrows ? styles.customPrevArrow : 'hidden'}
         onMouseEnter={() => setShowArrows(true)}
         onMouseLeave={() => setShowArrows(false)}
       >
@@ -72,7 +68,7 @@ const ImageSwiper = ({ images, error }: { images: string[]; error: any }) => {
       </div>
       <div
         ref={swiperImageNextRef}
-        className={showArrows ? styles.customNextArrow : "hidden"}
+        className={showArrows ? styles.customNextArrow : 'hidden'}
         onMouseEnter={() => setShowArrows(true)}
         onMouseLeave={() => setShowArrows(false)}
       >

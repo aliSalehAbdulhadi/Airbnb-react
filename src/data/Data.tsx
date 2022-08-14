@@ -1,12 +1,13 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { v4 as uuidv4 } from 'uuid';
-import { useFetchImages } from '../utilities/fetchImages';
+import { FetchImages } from '../utilities/fetchImages';
 import data from './data.json';
 
-export const dynamicData = () => {
+const Data = () => {
   const randomNum = (length: number) => {
     return Math.floor(Math.random() * length);
   };
+
+  const { images, error } = FetchImages(5,"");
 
   const randomNumBetween = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -22,10 +23,10 @@ export const dynamicData = () => {
     }`,
     joined: `${data.months[randomNum(12)]} 201${randomNum(9)}`,
     price: `$${randomNumBetween(100, 400)}`,
-    image: '',
-    location: `${data.countries[sameNum].name}, ${data.countries[sameNum].capital} `,
+    images: images,
+    location: `${data.countries[sameNum]?.name}, ${data.countries[sameNum]?.capital} `,
     totalReview: `${randomNum(50)}`,
-    rating: `${randomNum(5)}`,
+    rating: `${randomNumBetween(2, 5)}`,
     date: `${data.monthsShort[randomNum(12)]} ${randomNumBetween(
       1,
       31,
@@ -96,3 +97,5 @@ export const dynamicData = () => {
   };
   return dataObj;
 };
+
+export default Data;

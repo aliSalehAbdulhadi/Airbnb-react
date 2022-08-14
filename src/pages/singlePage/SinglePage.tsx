@@ -15,17 +15,14 @@ import FooterReservation from '../../components/singlePageComponents/footer/foot
 import NavbarOnScroll from '../../components/navbars/navbarOnscroll/NavbarOnScroll';
 import useDataBase from '../../context/dataStore/dataStore';
 import { useParams } from 'react-router-dom';
+import { useScrollY } from '../../hooks/useScrollY';
 
 const SinglePage = () => {
-  const [scroll, setScroll] = useState<number>(0);
+  const [hostImage, setHostImage] = useState<string>('');
   const db = useDataBase((state: any) => state.db);
   const { id } = useParams();
   const singleData = db.find((singleData: any) => singleData.id === id);
-
-  window.addEventListener('scroll', () => {
-    setScroll(window.scrollY);
-  });
-
+  const scroll = useScrollY();
   return (
     <>
       <div className="max-w-[1500px] mx-auto  hidden semiSm:block ">
@@ -82,6 +79,7 @@ const SinglePage = () => {
             price={singleData?.price}
             reviews={singleData?.reviews}
             rating={singleData?.rating}
+            hostImage={(e: string[]) => setHostImage(e[2])}
           />
         </div>
 
@@ -110,6 +108,7 @@ const SinglePage = () => {
             totalReviews={singleData?.totalReview}
             coHosts={singleData?.coHosts}
             joined={singleData?.joined}
+            hostImage={hostImage}
           />
         </div>
       </div>

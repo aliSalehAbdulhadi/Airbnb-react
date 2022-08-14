@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import "react-dates/initialize";
-import moment from "moment";
-import { DateRangePicker, isInclusivelyBeforeDay } from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
-import ReservationSide from "./reservationSide/ReservationSide";
-import { aboutSection } from "../../../data/interfaces/interfaces";
+import { useEffect, useState } from 'react';
+import 'react-dates/initialize';
+import moment from 'moment';
+import { DateRangePicker, isInclusivelyBeforeDay } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
+import ReservationSide from './reservationSide/ReservationSide';
+import { aboutSection } from '../../../data/interfaces/interfaces';
+import { FetchImages } from '../../../utilities/fetchImages';
 
 const AboutSection = ({
   roomInfo,
@@ -12,10 +13,17 @@ const AboutSection = ({
   price,
   rating,
   reviews,
+  hostImage,
 }: aboutSection) => {
   const [startDate, setStartDate] = useState<any>(null);
   const [endDate, setEndDate] = useState<any>(null);
   const [focusedInput, setFocusedInput] = useState<any>(null);
+  const { images } = FetchImages(5, '');
+
+  useEffect(() => {
+    hostImage(images);
+  }, [images, hostImage]);
+
   return (
     <div className="flex mt-10">
       <div className=" semiSm:w-[70%] ">
@@ -35,7 +43,7 @@ const AboutSection = ({
             <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden">
               <img
                 className="h-[100%] w-[100%] object-cover"
-                src="/images/man.jpg"
+                src={images[2]?.webformatURL}
                 alt=""
               />
             </div>
@@ -185,8 +193,8 @@ const AboutSection = ({
               isOutsideRange={(day: any) =>
                 !isInclusivelyBeforeDay(day, moment())
               }
-              initialVisibleMonth={() => moment().subtract(1, "month")}
-              orientation={"horizontal"}
+              initialVisibleMonth={() => moment().subtract(1, 'month')}
+              orientation={'horizontal'}
             />
           </div>
         </div>
