@@ -22,7 +22,7 @@ const SinglePage = () => {
   const db = useDataBase((state: any) => state.db);
   const { id } = useParams();
   const singleData = db.find((singleData: any) => singleData.id === id);
-  const scroll = useScrollY();
+  const scroll = 100;
   return (
     <>
       <div className="max-w-[1500px] mx-auto  hidden semiSm:block ">
