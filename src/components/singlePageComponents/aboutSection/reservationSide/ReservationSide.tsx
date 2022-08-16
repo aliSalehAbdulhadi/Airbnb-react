@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import moment from "moment";
-import { DateRangePicker, isInclusivelyBeforeDay } from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
+// import { DateRangePicker, isInclusivelyBeforeDay } from "react-dates";
+// import "react-dates/lib/css/_datepicker.css";
 import useClickOutside from "../../../../hooks/useClickOutside";
 import ReservationModal from "./reservationModal/ReservationModal";
 import { reservationSide } from "../../../../data/interfaces/interfaces";
@@ -39,7 +39,7 @@ const ReservationSide = ({ price, rating, reviews }: reservationSide) => {
           </div>
         </div>
         <div ref={nodeDom} className="flex flex-col items-center  ">
-          <div
+          {/* <div
             className="mb-1 cursor-pointer border-[1.5px] border-t-0 rounded-b-lg pb-2"
             onClick={() => setIsVisible(true)}
           >
@@ -66,7 +66,7 @@ const ReservationSide = ({ price, rating, reviews }: reservationSide) => {
                 {adults + children + infants} guests
               </div>
             </div>
-          </div>
+          </div> */}
 
           <ReservationModal
             setIsVisible={setIsVisible}

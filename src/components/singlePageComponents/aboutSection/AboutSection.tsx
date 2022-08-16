@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import 'react-dates/initialize';
 import moment from 'moment';
-import { DateRangePicker, isInclusivelyBeforeDay } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
+// import 'react-dates/initialize';
+// import { DateRangePicker, isInclusivelyBeforeDay } from 'react-dates';
+// import 'react-dates/lib/css/_datepicker.css';
 import ReservationSide from './reservationSide/ReservationSide';
 import { aboutSection } from '../../../data/interfaces/interfaces';
 
@@ -177,7 +177,7 @@ const AboutSection = ({
               Add your travel dates for exact pricing
             </h4>
           </div>
-          <div>
+          {/* <div>
             <DateRangePicker
               startDate={startDate}
               startDateId="startDate"
@@ -195,7 +195,7 @@ const AboutSection = ({
               initialVisibleMonth={() => moment().subtract(1, 'month')}
               orientation={'horizontal'}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <ReservationSide reviews={reviews} rating={rating} price={price} />

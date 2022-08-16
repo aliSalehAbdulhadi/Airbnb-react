@@ -1,4 +1,5 @@
 import { useEffect, useState, memo } from 'react';
+import { useParams } from 'react-router-dom';
 import TitleSection from '../../components/singlePageComponents/titleSections/titleSection/TitleSection';
 import ImageSection from '../../components/singlePageComponents/imageSection/ImageSection';
 import AboutSection from '../../components/singlePageComponents/aboutSection/AboutSection';
@@ -14,7 +15,6 @@ import ReviewsSwiper from '../../components/swiper/reviewsSwiper/ReviewsSwiper';
 import FooterReservation from '../../components/singlePageComponents/footer/footerReservation/FooterReservation';
 import NavbarOnScroll from '../../components/navbars/navbarOnscroll/NavbarOnScroll';
 import useDataBase from '../../context/dataStore/dataStore';
-import { useParams } from 'react-router-dom';
 import { useScrollY } from '../../hooks/useScrollY';
 import useImageStore from '../../context/imagesStore/imagesStore';
 
