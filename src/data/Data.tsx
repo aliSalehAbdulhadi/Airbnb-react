@@ -7,7 +7,7 @@ const Data = () => {
     return Math.floor(Math.random() * length);
   };
 
-  const { images, error } = FetchImages(5,"");
+  const { images, error } = FetchImages();
 
   const randomNumBetween = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1) + min);

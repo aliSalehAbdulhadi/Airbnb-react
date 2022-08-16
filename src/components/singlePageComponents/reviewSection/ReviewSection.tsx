@@ -1,11 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import { reviewSection } from '../../../data/interfaces/interfaces';
 import ReviewCard from './reviewCard/ReviewCard';
-import { FetchImages } from '../../../utilities/fetchImages';
 
-const ReviewSection = ({ reviews, rating }: reviewSection) => {
-  const { images } = FetchImages(5, '');
-
+const ReviewSection = ({ reviews, rating, images }: reviewSection) => {
   return (
     <div className="mt-10 pt-10 border-t-[1px]">
       <div className="mb-5 font-cerealMedium text-xl flex items-center">

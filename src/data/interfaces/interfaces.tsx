@@ -27,6 +27,7 @@ export interface aboutSection {
   reviews: string;
   rating: string;
   hostImage: any;
+  images: any;
 }
 
 export interface reviewSection {
@@ -37,7 +38,7 @@ export interface reviewSection {
     comment: string;
     date: string;
   }[];
-
+  images: any;
   rating: string;
 }
 
@@ -63,6 +64,7 @@ export interface hostInfo {
     reviews: { name: string; image?: string }[];
   }[];
   hostImage: any;
+  images: any;
 }
 
 export interface reservationSide {

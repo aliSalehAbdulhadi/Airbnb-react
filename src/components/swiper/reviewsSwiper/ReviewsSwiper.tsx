@@ -6,11 +6,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import ReviewCard from '../../singlePageComponents/reviewSection/reviewCard/ReviewCard';
 import { reviewSection } from '../../../data/interfaces/interfaces';
-import { FetchImages } from '../../../utilities/fetchImages';
 
-const ReviewsSwiper = ({ reviews, rating }: reviewSection) => {
-  const { images } = FetchImages(5, '');
-
+const ReviewsSwiper = ({ reviews, rating, images }: reviewSection) => {
   return (
     <div>
       <div className="mt-10 pt-10 border-t-[1px]">

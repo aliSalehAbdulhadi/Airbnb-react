@@ -9,12 +9,15 @@ import NavbarSingleSearchBar from '../navbarSingleSearchBar/NavbarSingleSearchBa
 import UserModal from '../../modals/userModal/UserModal';
 import useLoading from '../../../context/loading/loading';
 import useSearchSwiper from '../../../context/searchSwiper/searchSwiper';
+import useImageStore from '../../../context/imagesStore/imagesStore';
 
 const Navbar = ({ singlePage }: { singlePage: boolean }) => {
   const [expandNav, setExpandNav] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const clickedSwiper = useSearchSwiper((state: any) => state.clickedSwiper);
   const setLoadingHome = useLoading((state: any) => state.setLoadingHome);
+  const fetch = useImageStore((state: any) => state.fetch);
+
   const expandNod = useClickOutside(() => {
     setExpandNav(false);
   });
@@ -35,6 +38,8 @@ const Navbar = ({ singlePage }: { singlePage: boolean }) => {
           onClick={() => {
             setLoadingHome(true);
             clickedSwiper('');
+            fetch();
+            console.log('clicked');
           }}
           to="/"
           className="hidden md:block"

@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
 import { hostInfo } from '../../../data/interfaces/interfaces';
-import { FetchImages } from '../../../utilities/fetchImages';
 
 const HostInfo = ({
   host,
@@ -8,8 +7,8 @@ const HostInfo = ({
   totalReviews,
   coHosts,
   hostImage,
+  images
 }: hostInfo) => {
-  const { images } = FetchImages(5, '');
 
   return (
     <div className="flex flex-col semiSm:flex-row items-center">

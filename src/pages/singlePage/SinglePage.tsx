@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import TitleSection from '../../components/singlePageComponents/titleSections/titleSection/TitleSection';
 import ImageSection from '../../components/singlePageComponents/imageSection/ImageSection';
 import AboutSection from '../../components/singlePageComponents/aboutSection/AboutSection';
@@ -16,13 +16,23 @@ import NavbarOnScroll from '../../components/navbars/navbarOnscroll/NavbarOnScro
 import useDataBase from '../../context/dataStore/dataStore';
 import { useParams } from 'react-router-dom';
 import { useScrollY } from '../../hooks/useScrollY';
+import useImageStore from '../../context/imagesStore/imagesStore';
 
 const SinglePage = () => {
   const [hostImage, setHostImage] = useState<string>('');
+
   const db = useDataBase((state: any) => state.db);
   const { id } = useParams();
   const singleData = db.find((singleData: any) => singleData.id === id);
-  const scroll = 100;
+  const scroll = useScrollY();
+  const images = useImageStore((state: any) => state.images);
+  const fetch = useImageStore((state: any) => state.fetch);
+
+  useEffect(() => {
+    fetch();
+    window.history.scrollRestoration = 'manual';
+  }, [fetch]);
+
   return (
     <>
       <div className="max-w-[1500px] mx-auto  hidden semiSm:block ">
@@ -56,11 +66,11 @@ const SinglePage = () => {
         </div>
 
         <div className="hidden semiSm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
-          <ImageSection />
+          <ImageSection images={images} />
         </div>
 
         <div className="block semiSm:hidden">
-          <SinglePageImageSwiper />
+          <SinglePageImageSwiper images={images} />
         </div>
 
         <div className="block semiSm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
@@ -80,6 +90,7 @@ const SinglePage = () => {
             reviews={singleData?.reviews}
             rating={singleData?.rating}
             hostImage={(e: string[]) => setHostImage(e[2])}
+            images={images}
           />
         </div>
 
@@ -90,12 +101,14 @@ const SinglePage = () => {
           <ReviewSection
             reviews={singleData?.reviews}
             rating={singleData?.rating}
+            images={images}
           />
         </div>
         <div className="block sm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
           <ReviewsSwiper
             reviews={singleData?.reviews}
             rating={singleData?.rating}
+            images={images}
           />
         </div>
         <div id="map" className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48 ">
@@ -109,13 +122,14 @@ const SinglePage = () => {
             coHosts={singleData?.coHosts}
             joined={singleData?.joined}
             hostImage={hostImage}
+            images={images}
           />
         </div>
       </div>
-      <Footer />
+      <Footer isHome={false} />
       <FooterReservation />
     </>
   );
 };
 
-export default SinglePage;
+export default memo(SinglePage);

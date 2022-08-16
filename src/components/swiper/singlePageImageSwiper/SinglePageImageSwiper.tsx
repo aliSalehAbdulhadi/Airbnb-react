@@ -5,11 +5,8 @@ import { Link } from 'react-router-dom';
 import styles from '../../../styles/swiper.module.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { FetchImages } from '../../../utilities/fetchImages';
 
-const SinglePageImageSwiper = () => {
-  const { images } = FetchImages(10, '');
-
+const SinglePageImageSwiper = ({ images }: { images: any }) => {
   return (
     <div className="relative">
       <Link to="/" className="absolute top-5 left-5 z-50">
@@ -40,7 +37,7 @@ const SinglePageImageSwiper = () => {
         watchOverflow={true}
         setWrapperSize={true}
       >
-        {images.map((image: any) => (
+        {images.map((image: any, i: number) => (
           <SwiperSlide
             key={uuidv4()}
             className="flex flex-col items-center justify-center  "

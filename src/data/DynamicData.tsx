@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { FetchImages } from '../utilities/fetchImages';
+import { LoremIpsum } from 'lorem-ipsum';
 import data from './data.json';
-
 const DynamicData = () => {
   const randomNum = (length: number) => {
     return Math.floor(Math.random() * length);
@@ -11,12 +9,18 @@ const DynamicData = () => {
   const randomNumBetween = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
-
   const sameNum = randomNumBetween(1, data.countries.length);
+
+  const lorem = new LoremIpsum({
+    wordsPerSentence: {
+      max: 12,
+      min: 4,
+    },
+  });
 
   const dataObj = {
     id: uuidv4(),
-    title: 'Vakthusøyen - Nybryggen - on a small island',
+    title: lorem.generateSentences(1),
     host: `${data.names[randomNum(data.names.length)]} ${
       data.names[randomNum(data.names.length)]
     }`,

@@ -1,5 +1,5 @@
-import React from "react";
-import { IoSearch } from "react-icons/io5";
+import React from 'react';
+import { IoSearch } from 'react-icons/io5';
 
 const NavbarSingleSearchBar = ({
   setExpandNav,
@@ -8,7 +8,6 @@ const NavbarSingleSearchBar = ({
 }) => {
   return (
     <div>
-      {" "}
       <div onClick={() => setExpandNav(true)}>
         <div className="pl-7 pr-3 py-2 border-[1px] rounded-full shadow-2xl flex items-center justify-between cursor-pointer">
           <h1 className="font-cerealMedium text-sm mr-[7rem]">

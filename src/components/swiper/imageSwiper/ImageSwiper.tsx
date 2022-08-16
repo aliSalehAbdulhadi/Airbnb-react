@@ -42,7 +42,7 @@ const ImageSwiper = ({ images, error }: { images: string[]; error: any }) => {
           onMouseLeave={() => setShowArrows(false)}
         >
           <div
-            className="h-[300px] min-w-[350px]  border rounded-xl overflow-hidden"
+            className="h-[290px] min-w-[300px]  border rounded-xl overflow-hidden"
             onMouseEnter={() => setShowArrows(true)}
             onMouseLeave={() => setShowArrows(false)}
           >

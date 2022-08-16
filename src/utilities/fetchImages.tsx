@@ -3,7 +3,7 @@ import axiosRetry from 'axios-retry';
 import { useEffect, useState } from 'react';
 import useSearchSwiper from '../context/searchSwiper/searchSwiper';
 
-export const FetchImages = (perPage: number, search: string) => {
+export const FetchImages = () => {
   const [rawImages, setImages] = useState<any>([]);
   const [error, setError] = useState<any>([]);
   const currSwiper = useSearchSwiper((state: any) => state.swiper);
@@ -33,7 +33,7 @@ export const FetchImages = (perPage: number, search: string) => {
     axios
       .get(
         `https://pixabay.com/api/?key=29035030-c3f6b012376c98970c0a67f22&q=${
-          currSwiper === '' || search ? search || types[randomNum2] : currSwiper
+          currSwiper === '' ? types[randomNum2] : currSwiper
         }&image_type=photo&pretty=true&per_page=${randomNumBetween(8, 15)}`,
       )
       .then((res) => {
@@ -44,6 +44,6 @@ export const FetchImages = (perPage: number, search: string) => {
           setError(err);
         }
       });
-  }, [currSwiper, search, perPage]);
+  }, [currSwiper]);
   return { images, error };
 };

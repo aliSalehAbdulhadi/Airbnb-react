@@ -5,7 +5,6 @@ import { DateRangePicker, isInclusivelyBeforeDay } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import ReservationSide from './reservationSide/ReservationSide';
 import { aboutSection } from '../../../data/interfaces/interfaces';
-import { FetchImages } from '../../../utilities/fetchImages';
 
 const AboutSection = ({
   roomInfo,
@@ -14,11 +13,11 @@ const AboutSection = ({
   rating,
   reviews,
   hostImage,
+  images,
 }: aboutSection) => {
   const [startDate, setStartDate] = useState<any>(null);
   const [endDate, setEndDate] = useState<any>(null);
   const [focusedInput, setFocusedInput] = useState<any>(null);
-  const { images } = FetchImages(5, '');
 
   useEffect(() => {
     hostImage(images);

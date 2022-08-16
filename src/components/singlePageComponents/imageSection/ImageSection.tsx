@@ -1,8 +1,6 @@
-import { FetchImages } from '../../../utilities/fetchImages';
 import { v4 as uuidv4 } from 'uuid';
 
-const ImageSection = () => {
-  const { images } = FetchImages(10, '');
+const ImageSection = ({ images }: { images: any }) => {
   return (
     <div className="flex w-auto h-[400px] md:h-[500px] rounded-xl overflow-hidden mt-10">
       <div className="w-[50%] mr-1 ">

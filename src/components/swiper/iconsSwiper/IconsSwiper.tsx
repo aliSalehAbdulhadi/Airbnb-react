@@ -31,7 +31,7 @@ const IconsSwiper = () => {
 
   const innerWidth = (size: any) => {
     if (size > 1300) {
-      return 13;
+      return 14;
     } else if (size > 992) {
       return 10;
     } else if (size > 850) {
@@ -55,7 +55,7 @@ const IconsSwiper = () => {
         {icons.icons.map((icon) => (
           <SwiperSlide
             key={uuidv4()}
-            className={`flex flex-col items-center justify-center opacity-60 scale-90 cursor-pointer transition-all ease-in-out duration-500 hover:opacity-90 border-b-2 pb-2 border-white  ${
+            className={`flex flex-col items-center justify-center opacity-[.75]  cursor-pointer transition-all ease-in-out duration-500 hover:opacity-90 border-b-2 pb-2 border-white  ${
               icon === currSwiper
                 ? 'opacity-90 border-gray-800'
                 : 'hover:border-gray-200'
@@ -76,14 +76,14 @@ const IconsSwiper = () => {
                   clickedSwiper(icon);
                   setLoadingHome(true);
                 }}
-                className="flex flex-col items-center justify-center scale-90 semiSm:scale-100"
+                className="flex flex-col items-center justify-center scale-90 semiSm:scale-100 opacity-80"
               >
                 <img
                   className="select-none "
                   src={`/svg/${icon}.svg`}
                   alt="icons"
                 />
-                <div className=" mt-1 text-sm font-cerealMedium">
+                <div className=" mt-1 text-xs font-cerealMedium opacity-[.80] ">
                   {toUpperCase(icon)}
                 </div>
               </div>

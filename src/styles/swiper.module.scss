@@ -3,25 +3,34 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-image: url("../../public/svg/arrow.svg");
+    background-image: url('../../public/svg/arrow.svg');
     transform: rotate(90deg);
     height: 0.1rem;
     padding: 13px 10px;
     border-radius: 100%;
     border: 0.1rem solid rgb(153, 149, 149);
     background-color: white;
+    scale: 90%;
   }
   :global(.swiper-button-next) {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-image: url("../../public/svg/arrow.svg");
+    background-image: url('../../public/svg/arrow.svg');
     transform: rotate(-90deg);
     height: 0.01rem;
     padding: 14px 13px;
     border-radius: 100%;
-    border: 0.1rem solid rgb(153, 149, 149);
+    border: 1px solid rgb(153, 149, 149);
     background-color: white;
+    scale: 90%;
+  }
+  :global(.swiper-button-next):hover {
+    scale: 95%;
+  }
+
+  :global(.swiper-button-prev):hover {
+    scale: 95%;
   }
 
   :global(.swiper-button-prev::after) {
@@ -40,14 +49,14 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-image: url("../../public/svg/arrow2.svg");
+    background-image: url('../../public/svg/arrow2.svg');
     transform: rotate(180deg);
   }
   :global(.swiper-button-next) {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-image: url("../../public/svg/arrow2.svg");
+    background-image: url('../../public/svg/arrow2.svg');
   }
 
   :global(.swiper-pagination-bullet-active) {
