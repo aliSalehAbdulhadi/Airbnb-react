@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import moment from 'moment';
+import { useEffect } from 'react';
+// import moment from 'moment';
 // import 'react-dates/initialize';
 // import { DateRangePicker, isInclusivelyBeforeDay } from 'react-dates';
 // import 'react-dates/lib/css/_datepicker.css';
@@ -15,9 +15,9 @@ const AboutSection = ({
   hostImage,
   images,
 }: aboutSection) => {
-  const [startDate, setStartDate] = useState<any>(null);
-  const [endDate, setEndDate] = useState<any>(null);
-  const [focusedInput, setFocusedInput] = useState<any>(null);
+  // const [startDate, setStartDate] = useState<any>(null);
+  // const [endDate, setEndDate] = useState<any>(null);
+  // const [focusedInput, setFocusedInput] = useState<any>(null);
 
   useEffect(() => {
     hostImage(images);

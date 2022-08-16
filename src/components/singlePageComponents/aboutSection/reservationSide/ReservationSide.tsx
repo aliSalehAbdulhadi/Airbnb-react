@@ -1,15 +1,15 @@
-import  { useState } from "react";
-import moment from "moment";
+import { useState } from 'react';
+// import moment from "moment";
 // import { DateRangePicker, isInclusivelyBeforeDay } from "react-dates";
 // import "react-dates/lib/css/_datepicker.css";
-import useClickOutside from "../../../../hooks/useClickOutside";
-import ReservationModal from "./reservationModal/ReservationModal";
-import { reservationSide } from "../../../../data/interfaces/interfaces";
+import useClickOutside from '../../../../hooks/useClickOutside';
+import ReservationModal from './reservationModal/ReservationModal';
+import { reservationSide } from '../../../../data/interfaces/interfaces';
 
 const ReservationSide = ({ price, rating, reviews }: reservationSide) => {
-  const [startDateSide, setStartDateSide] = useState<any>(null);
-  const [endDateSide, setEndDateSide] = useState<any>(null);
-  const [focusedInputSide, setFocusedInputSide] = useState<any>(null);
+  // const [startDateSide, setStartDateSide] = useState<any>(null);
+  // const [endDateSide, setEndDateSide] = useState<any>(null);
+  // const [focusedInputSide, setFocusedInputSide] = useState<any>(null);
 
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [adults, setAdults] = useState<number>(1);
