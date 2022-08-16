@@ -1,5 +1,4 @@
-import { IoSearch } from "react-icons/io5";
-import Layout from "../../layout/Layout";
+import { IoSearch } from 'react-icons/io5';
 
 const ExpandedNav = () => {
   return (
@@ -10,7 +9,7 @@ const ExpandedNav = () => {
         <button className="btn-underline-hover">Online Experiences</button>
       </div>
 
-      <div className="flex items-center text-[.85rem] font-cerealMedium border-[1px] rounded-full mx-4 my-2 mb-3 cursor-pointer shadow-2xl ">
+      <div className="flex items-center text-[.85rem] font-cerealMedium border-[1px] rounded-full mx-4 my-2 mb-3 cursor-pointer shadow-xl ">
         <div className="flex flex-col w-[280px] px-6 border-r-[1px] hover:border-r-[0px] hover:rounded-full py-3 hover:bg-[#dadada]">
           <h1>Where</h1>
           <input

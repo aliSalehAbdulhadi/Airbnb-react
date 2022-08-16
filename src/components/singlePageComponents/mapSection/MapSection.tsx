@@ -1,6 +1,6 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
-const MapSection = () => {
+const MapSection = ({ location }: { location: string }) => {
   return (
     <div className="h-full w-full mt-10 border-t-[1px] pt-10 z-[-1]">
       <div className="mb-5 font-cerealMedium text-xl">Where You will be.</div>
@@ -14,7 +14,7 @@ const MapSection = () => {
         </Marker>
       </MapContainer>
       <div className="my-10">
-        <h1 className="font-cerealMedium">Nordland, Norway</h1>
+        <h1 className="font-cerealMedium">{location}</h1>
         <h2 className="font-cerealNormal my-3">
           First of all, you're on a cozy island-in the fall and spring, there's
           no one or few others on the island. In the summer, there are up to

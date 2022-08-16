@@ -1,6 +1,15 @@
-import { hostInfo } from "../../../data/interfaces/interfaces";
+import { v4 as uuidv4 } from 'uuid';
+import { hostInfo } from '../../../data/interfaces/interfaces';
 
-const HostInfo = ({ host, joined, totalReviews, coHosts }: hostInfo) => {
+const HostInfo = ({
+  host,
+  joined,
+  totalReviews,
+  coHosts,
+  hostImage,
+  images
+}: hostInfo) => {
+
   return (
     <div className="flex flex-col semiSm:flex-row items-center">
       <div className=" semiSm:w-[60%] ">
@@ -9,7 +18,7 @@ const HostInfo = ({ host, joined, totalReviews, coHosts }: hostInfo) => {
             <div className="h-14 w-14 rounded-[50%] overflow-hidden mr-3">
               <img
                 className="h-[100%] w-[100%] object-cover"
-                src="/images/man.jpg"
+                src={hostImage?.webformatURL}
                 alt=""
               />
             </div>
@@ -55,12 +64,12 @@ const HostInfo = ({ host, joined, totalReviews, coHosts }: hostInfo) => {
             <div className="mt-5">
               <h1 className="font-cerealMedium">Co-hosts</h1>
               <div className="flex items-center">
-                {coHosts?.map((coHost) => (
-                  <div className="flex items-center mt-3 mr-3">
+                {coHosts?.map((coHost, i) => (
+                  <div key={uuidv4()} className="flex items-center mt-3 mr-3">
                     <div className="h-10 w-10 rounded-[50%] overflow-hidden mr-3">
                       <img
                         className="h-[100%] w-[100%] object-cover"
-                        src="/images/girl2.jpg"
+                        src={images[i]?.webformatURL}
                         alt=""
                       />
                     </div>

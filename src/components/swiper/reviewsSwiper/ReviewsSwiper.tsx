@@ -1,12 +1,13 @@
-import { Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "../../../styles/swiper.module.scss";
-import "swiper/css";
-import "swiper/css/navigation";
-import ReviewCard from "../../singlePageComponents/reviewSection/reviewCard/ReviewCard";
-import { reviewSection } from "../../../data/interfaces/interfaces";
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { v4 as uuidv4 } from 'uuid';
+import styles from '../../../styles/swiper.module.scss';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import ReviewCard from '../../singlePageComponents/reviewSection/reviewCard/ReviewCard';
+import { reviewSection } from '../../../data/interfaces/interfaces';
 
-const ReviewsSwiper = ({ reviews, rating }: reviewSection) => {
+const ReviewsSwiper = ({ reviews, rating, images }: reviewSection) => {
   return (
     <div>
       <div className="mt-10 pt-10 border-t-[1px]">
@@ -30,10 +31,10 @@ const ReviewsSwiper = ({ reviews, rating }: reviewSection) => {
           setWrapperSize={true}
           centeredSlides={true}
         >
-          {reviews?.map((review) => (
-            <SwiperSlide>
+          {reviews?.map((review, i) => (
+            <SwiperSlide key={uuidv4()}>
               <div className="border-[1px] rounded-xl mr-2">
-                <ReviewCard review={review} />
+                <ReviewCard review={review} image={images[i]?.webformatURL} />
               </div>
             </SwiperSlide>
           ))}

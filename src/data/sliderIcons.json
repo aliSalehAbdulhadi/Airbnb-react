@@ -1,6 +1,7 @@
 {
   "icons": [
     "bar",
+    "cafe",
     "beach",
     "cabin",
     "camping",
@@ -10,7 +11,7 @@
     "house",
     "houseBoat",
     "mountain",
-    "nature",
+    "forest",
     "park",
     "restaurant",
     "villa",
@@ -24,7 +25,6 @@
     "house",
     "houseBoat",
     "mountain",
-    "nature",
     "park",
     "restaurant",
     "villa"

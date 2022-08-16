@@ -1,21 +1,29 @@
-import axios from "axios";
-import axiosRetry from "axios-retry";
-import { useEffect, useState } from "react";
+import axios from 'axios';
+import axiosRetry from 'axios-retry';
+import { useEffect, useState } from 'react';
+import useSearchSwiper from '../context/searchSwiper/searchSwiper';
 
-export const useFetchImages = (): any => {
-  const [images, setImages] = useState<any>([]);
+export const FetchImages = () => {
+  const [rawImages, setImages] = useState<any>([]);
   const [error, setError] = useState<any>([]);
-  const randomNum = Math.floor(Math.random() * 10);
+  const currSwiper = useSearchSwiper((state: any) => state.swiper);
+  const images = rawImages.sort(function () {
+    return 0.5 - Math.random();
+  });
+  const randomNumBetween = (min: number, max: number) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
   const types = [
-    "houses",
-    "buildings",
-    "cabin",
-    "lake",
-    "restaurant",
-    "hotel",
-    "mountain",
-    "sea",
-    "bar",
+    'houses',
+    'buildings',
+    'cabin',
+    'lake',
+    'restaurant',
+    'hotel',
+    'mountain',
+    'sea',
+    'bar',
   ];
   const randomNum2 = Math.floor(Math.random() * types.length);
 
@@ -25,8 +33,8 @@ export const useFetchImages = (): any => {
     axios
       .get(
         `https://pixabay.com/api/?key=29035030-c3f6b012376c98970c0a67f22&q=${
-          types[randomNum2]
-        }&image_type=photo&pretty=true&per_page=${randomNum + 3}&order=latest`,
+          currSwiper === '' ? types[randomNum2] : currSwiper
+        }&image_type=photo&pretty=true&per_page=${randomNumBetween(8, 15)}`,
       )
       .then((res) => {
         setImages(res.data.hits);
@@ -36,6 +44,6 @@ export const useFetchImages = (): any => {
           setError(err);
         }
       });
-  }, []);
+  }, [currSwiper]);
   return { images, error };
 };

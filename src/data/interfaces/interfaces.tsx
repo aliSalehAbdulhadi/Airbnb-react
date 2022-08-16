@@ -1,9 +1,10 @@
 export interface homeCard {
   id: string;
-  title: string;
+  location: string;
   host: string;
   price: string;
   date: string;
+  rating: string;
 }
 
 export interface titleSection {
@@ -25,6 +26,8 @@ export interface aboutSection {
   price: string;
   reviews: string;
   rating: string;
+  hostImage: any;
+  images: any;
 }
 
 export interface reviewSection {
@@ -35,7 +38,7 @@ export interface reviewSection {
     comment: string;
     date: string;
   }[];
-
+  images: any;
   rating: string;
 }
 
@@ -47,6 +50,8 @@ export interface reviewCard {
     comment: string;
     date: string;
   };
+
+  image: any;
 }
 
 export interface hostInfo {
@@ -58,6 +63,8 @@ export interface hostInfo {
     image?: string;
     reviews: { name: string; image?: string }[];
   }[];
+  hostImage: any;
+  images: any;
 }
 
 export interface reservationSide {

@@ -1,6 +1,6 @@
-import HomePage from "./pages/homePage/HomePage";
-import SinglePage from "./pages/singlePage/SinglePage";
-import { Routes, Route } from "react-router-dom";
+import HomePage from './pages/homePage/HomePage';
+import SinglePage from './pages/singlePage/SinglePage';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

@@ -1,30 +1,37 @@
-import { useState } from "react";
-import TitleSection from "../../components/singlePageComponents/titleSections/titleSection/TitleSection";
-import ImageSection from "../../components/singlePageComponents/imageSection/ImageSection";
-import AboutSection from "../../components/singlePageComponents/aboutSection/AboutSection";
-import ReviewSection from "../../components/singlePageComponents/reviewSection/ReviewSection";
-import MapSection from "../../components/singlePageComponents/mapSection/MapSection";
-import HostInfo from "../../components/singlePageComponents/hostInfo/HostInfo";
-import Footer from "../../components/singlePageComponents/footer/Footer";
-import Navbar from "../../components/navbars/navbar/Navbar";
-import SmallNavbar from "../../components/navbars/smalNavbar/SmallNavbar";
-import SinglePageImageSwiper from "../../components/swiper/singlePageImageSwiper/SinglePageImageSwiper";
-import TitleSmallSection from "../../components/singlePageComponents/titleSections/titleSmallSection/TitleSmallSection";
-import ReviewsSwiper from "../../components/swiper/reviewsSwiper/ReviewsSwiper";
-import FooterReservation from "../../components/singlePageComponents/footer/footerReservation/FooterReservation";
-import NavbarOnScroll from "../../components/navbars/navbarOnscroll/NavbarOnScroll";
-import useDataBase from "../../context/dataStore/dataStore";
-import { useParams } from "react-router-dom";
+import { useEffect, useState, memo } from 'react';
+import TitleSection from '../../components/singlePageComponents/titleSections/titleSection/TitleSection';
+import ImageSection from '../../components/singlePageComponents/imageSection/ImageSection';
+import AboutSection from '../../components/singlePageComponents/aboutSection/AboutSection';
+import ReviewSection from '../../components/singlePageComponents/reviewSection/ReviewSection';
+import MapSection from '../../components/singlePageComponents/mapSection/MapSection';
+import HostInfo from '../../components/singlePageComponents/hostInfo/HostInfo';
+import Footer from '../../components/singlePageComponents/footer/Footer';
+import Navbar from '../../components/navbars/navbar/Navbar';
+import SmallNavbar from '../../components/navbars/smalNavbar/SmallNavbar';
+import SinglePageImageSwiper from '../../components/swiper/singlePageImageSwiper/SinglePageImageSwiper';
+import TitleSmallSection from '../../components/singlePageComponents/titleSections/titleSmallSection/TitleSmallSection';
+import ReviewsSwiper from '../../components/swiper/reviewsSwiper/ReviewsSwiper';
+import FooterReservation from '../../components/singlePageComponents/footer/footerReservation/FooterReservation';
+import NavbarOnScroll from '../../components/navbars/navbarOnscroll/NavbarOnScroll';
+import useDataBase from '../../context/dataStore/dataStore';
+import { useParams } from 'react-router-dom';
+import { useScrollY } from '../../hooks/useScrollY';
+import useImageStore from '../../context/imagesStore/imagesStore';
 
 const SinglePage = () => {
-  const [scroll, setScroll] = useState<number>(0);
+  const [hostImage, setHostImage] = useState<string>('');
+
   const db = useDataBase((state: any) => state.db);
   const { id } = useParams();
   const singleData = db.find((singleData: any) => singleData.id === id);
+  const scroll = useScrollY();
+  const images = useImageStore((state: any) => state.images);
+  const fetch = useImageStore((state: any) => state.fetch);
 
-  window.addEventListener("scroll", () => {
-    setScroll(window.scrollY);
-  });
+  useEffect(() => {
+    fetch();
+    window.history.scrollRestoration = 'manual';
+  }, [fetch]);
 
   return (
     <>
@@ -39,7 +46,7 @@ const SinglePage = () => {
         </div>
       </div>
       <div className="md:block hidden sticky top-0 z-[50]  ">
-        <div className={`${scroll > 750 ? "block" : "hidden"}`}>
+        <div className={`${scroll > 750 ? 'block' : 'hidden'}`}>
           <NavbarOnScroll scrollY={scroll} />
           <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
         </div>
@@ -59,11 +66,11 @@ const SinglePage = () => {
         </div>
 
         <div className="hidden semiSm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
-          <ImageSection />
+          <ImageSection images={images} />
         </div>
 
         <div className="block semiSm:hidden">
-          <SinglePageImageSwiper />
+          <SinglePageImageSwiper images={images} />
         </div>
 
         <div className="block semiSm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
@@ -82,6 +89,8 @@ const SinglePage = () => {
             price={singleData?.price}
             reviews={singleData?.reviews}
             rating={singleData?.rating}
+            hostImage={(e: string[]) => setHostImage(e[2])}
+            images={images}
           />
         </div>
 
@@ -92,16 +101,18 @@ const SinglePage = () => {
           <ReviewSection
             reviews={singleData?.reviews}
             rating={singleData?.rating}
+            images={images}
           />
         </div>
         <div className="block sm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
           <ReviewsSwiper
             reviews={singleData?.reviews}
             rating={singleData?.rating}
+            images={images}
           />
         </div>
         <div id="map" className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48 ">
-          <MapSection />
+          <MapSection location={singleData?.location} />
         </div>
 
         <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
@@ -110,13 +121,15 @@ const SinglePage = () => {
             totalReviews={singleData?.totalReview}
             coHosts={singleData?.coHosts}
             joined={singleData?.joined}
+            hostImage={hostImage}
+            images={images}
           />
         </div>
       </div>
-      <Footer />
+      <Footer isHome={false} />
       <FooterReservation />
     </>
   );
 };
 
-export default SinglePage;
+export default memo(SinglePage);
