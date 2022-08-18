@@ -83,7 +83,7 @@ const HomePage = () => {
           })}
         </div>
       </div>
-      <FooterSmall />
+      {/* <FooterSmall /> */}
 
       <Footer isHome />
     </>
