@@ -85,4 +85,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-// "react-dates": "^21.8.0",
