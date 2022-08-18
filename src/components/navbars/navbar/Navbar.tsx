@@ -29,8 +29,8 @@ const Navbar = ({ singlePage }: { singlePage: boolean }) => {
   return (
     <nav
       ref={expandNod}
-      className={`flex items-start pt-5 border-black  outline-none transition-all duration-300 bg-white relative ${
-        expandNav ? 'h-[25vh] md:h-[20vh]' : 'h-[9vh]'
+      className={`flex items-start pt-5 border-black  outline-none transition-all duration-300 bg-white relative  ${
+        expandNav ? 'h-[25vh] md:h-[21vh] mb-3' : 'h-[9vh] '
       }`}
     >
       <div className={`flex items-center justify-between w-full `}>

@@ -30,7 +30,7 @@ const imagesStore = (set) => ({
           types[randomNum2]
         }&image_type=photo&pretty=true&per_page=${
           randomNumBetween(10, 20) + 3
-        }&order=latest`,
+        }&order=popular&pretty=true&page=10`,
       );
       set({ images: await (await data).data.hits });
     } catch (err) {

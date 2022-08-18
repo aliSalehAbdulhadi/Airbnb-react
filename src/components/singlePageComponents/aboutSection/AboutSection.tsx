@@ -27,24 +27,25 @@ const AboutSection = ({
     <div className="flex mt-10">
       <div className=" semiSm:w-[70%] ">
         <div className="semiSm:w-[90%] border-b-[1px] pb-4">
-          <div className="flex items-center justify-between">
-            <div className="w-[80%]">
-              <h1 className="font-cerealMedium text-2xl">
+          <div className="flex flex-col">
+            <div className="flex ">
+              <h1 className="font-cerealMedium text-xl semiSm:text-2xl w-[80%] semiSm:w-full mr-2">
                 Entire rental unit hosted by {host}
               </h1>
-              <div>
-                <span className="semiSm:ml-1">{roomInfo?.guests} guests</span>
-                <span className="ml-1">{roomInfo?.bedrooms} bedrooms</span>
-                <span className="ml-1">{roomInfo?.beds} beds</span>
-                <span className="ml-1">{roomInfo?.bathrooms} bath</span>
+
+              <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden">
+                <img
+                  className="h-[100%] w-[100%] object-cover"
+                  src={images[2]?.webformatURL}
+                  alt=""
+                />
               </div>
             </div>
-            <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden">
-              <img
-                className="h-[100%] w-[100%] object-cover"
-                src={images[2]?.webformatURL}
-                alt=""
-              />
+            <div className="mt-2">
+              <span className="semiSm:ml-1">{roomInfo?.guests} guests</span>
+              <span className="ml-1">{roomInfo?.bedrooms} bedrooms</span>
+              <span className="ml-1">{roomInfo?.beds} beds</span>
+              <span className="ml-1">{roomInfo?.bathrooms} bath</span>
             </div>
           </div>
         </div>
@@ -183,6 +184,7 @@ const AboutSection = ({
               startDateId="startDate"
               endDate={endDate}
               endDateId="endDate"
+              z-index="40"
               onDatesChange={({ startDate, endDate }: any) => {
                 setStartDate(startDate);
                 setEndDate(endDate);

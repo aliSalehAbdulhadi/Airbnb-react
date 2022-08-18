@@ -38,9 +38,9 @@ const ReservationSide = ({ price, rating, reviews }: reservationSide) => {
             </h2>
           </div>
         </div>
-        <div ref={nodeDom} className="flex flex-col items-center  ">
+        <div ref={nodeDom} className="flex flex-col items-center ">
           <div
-            className="mb-1 cursor-pointer border-[1.5px] border-t-0 rounded-b-lg pb-2"
+            className="mb-1 cursor-pointer border-[1px] border-t-0 rounded-b-lg pb-2"
             onClick={() => setIsVisible(true)}
           >
             <DateRangePicker

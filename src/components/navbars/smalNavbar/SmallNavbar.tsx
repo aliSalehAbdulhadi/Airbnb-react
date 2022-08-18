@@ -12,7 +12,11 @@ const SmallNavbar = () => {
           </div>
         </div>
       </div>
-      <img src="/svg/twoArrows.svg" alt="two arrows" />
+      <img
+        className="border-[1px] rounded-full p-[.30rem]"
+        src="/svg/twoArrows.svg"
+        alt="two arrows"
+      />
     </div>
   );
 };
