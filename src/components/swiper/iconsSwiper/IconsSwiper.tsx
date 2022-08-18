@@ -39,7 +39,7 @@ const IconsSwiper = () => {
     } else if (size > 768) {
       return 6;
     }
-    return 4;
+    return 4.5;
   };
 
   return (
