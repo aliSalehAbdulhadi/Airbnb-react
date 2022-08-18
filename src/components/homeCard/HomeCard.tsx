@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import ImageSwiper from '../swiper/imageSwiper/ImageSwiper';
 import { FetchImages } from '../../utilities/fetchImages';
 import { homeCard } from '../../data/interfaces/interfaces';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import useLoading from '../../context/loading/loading';
 
 const HomeCard = ({ location, host, date, price, id, rating }: homeCard) => {
@@ -106,4 +106,4 @@ const HomeCard = ({ location, host, date, price, id, rating }: homeCard) => {
   );
 };
 
-export default HomeCard;
+export default memo(HomeCard);

@@ -1,4 +1,4 @@
-import { titleSection } from "../../../../data/interfaces/interfaces";
+import { titleSection } from '../../../../data/interfaces/interfaces';
 
 const TitleSection = ({
   title,
@@ -7,8 +7,8 @@ const TitleSection = ({
   location,
 }: titleSection) => {
   return (
-    <div className="font-cerealNormal semiSm:mt-5">
-      <h1 className="text-2xl font-cerealMedium">{title}</h1>
+    <div className="font-cerealNormal semiSm:mt-5 ">
+      <h1 className="text-2xl font-cerealMedium ">{title}</h1>
       <div className="flex items-center justify-between mt-2 text-sm font-semibold">
         <div className="flex items-center justify-center">
           <span className=" flex items-center justify-center mr-2">

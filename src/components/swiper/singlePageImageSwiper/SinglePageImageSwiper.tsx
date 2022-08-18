@@ -42,7 +42,7 @@ const SinglePageImageSwiper = ({ images }: { images: any }) => {
             key={uuidv4()}
             className="flex flex-col items-center justify-center  "
           >
-            <div className="h-[50vh] w-[100vw]">
+            <div className="h-[30vh] w-[100vw]">
               <img
                 className="w-[100%] h-[100%] object-cover cursor-pointer"
                 src={image?.webformatURL}

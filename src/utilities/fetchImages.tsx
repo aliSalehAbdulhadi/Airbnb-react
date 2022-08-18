@@ -13,6 +13,7 @@ export const FetchImages = () => {
   const randomNumBetween = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
+  const order = ['latest', 'popular'];
 
   const types = [
     'houses',
@@ -34,7 +35,10 @@ export const FetchImages = () => {
       .get(
         `https://pixabay.com/api/?key=29035030-c3f6b012376c98970c0a67f22&q=${
           currSwiper === '' ? types[randomNum2] : currSwiper
-        }&image_type=photo&pretty=true&per_page=${randomNumBetween(8, 15)}`,
+        }&image_type=photo&pretty=true&per_page=${randomNumBetween(
+          8,
+          15,
+        )}&order=${order[randomNumBetween(1, 2)]}`,
       )
       .then((res) => {
         setImages(res.data.hits);

@@ -7,9 +7,8 @@ const HostInfo = ({
   totalReviews,
   coHosts,
   hostImage,
-  images
+  images,
 }: hostInfo) => {
-
   return (
     <div className="flex flex-col semiSm:flex-row items-center">
       <div className=" semiSm:w-[60%] ">
@@ -63,18 +62,20 @@ const HostInfo = ({
 
             <div className="mt-5">
               <h1 className="font-cerealMedium">Co-hosts</h1>
-              <div className="flex items-center">
+              <div className="flex items-center ">
                 {coHosts?.map((coHost, i) => (
-                  <div key={uuidv4()} className="flex items-center mt-3 mr-3">
+                  <div key={uuidv4()} className="flex items-center mt-3 mr-2">
                     <div className="h-10 w-10 rounded-[50%] overflow-hidden mr-3">
                       <img
-                        className="h-[100%] w-[100%] object-cover"
+                        className="h-[100%] w-[100%] object-cover "
                         src={images[i]?.webformatURL}
                         alt=""
                       />
                     </div>
                     <div>
-                      <h1>{coHost.name}</h1>
+                      <h1 className="text-sm semiSm:text-base">
+                        {coHost.name}
+                      </h1>
                     </div>
                   </div>
                 ))}

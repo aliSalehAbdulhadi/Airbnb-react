@@ -6,13 +6,13 @@ import AboutSection from '../../components/singlePageComponents/aboutSection/Abo
 import ReviewSection from '../../components/singlePageComponents/reviewSection/ReviewSection';
 import MapSection from '../../components/singlePageComponents/mapSection/MapSection';
 import HostInfo from '../../components/singlePageComponents/hostInfo/HostInfo';
-import Footer from '../../components/singlePageComponents/footer/Footer';
+import Footer from '../../components/footer/Footer';
 import Navbar from '../../components/navbars/navbar/Navbar';
 import SmallNavbar from '../../components/navbars/smalNavbar/SmallNavbar';
 import SinglePageImageSwiper from '../../components/swiper/singlePageImageSwiper/SinglePageImageSwiper';
 import TitleSmallSection from '../../components/singlePageComponents/titleSections/titleSmallSection/TitleSmallSection';
 import ReviewsSwiper from '../../components/swiper/reviewsSwiper/ReviewsSwiper';
-import FooterReservation from '../../components/singlePageComponents/footer/footerReservation/FooterReservation';
+import FooterReservation from '../../components/footer/footerReservation/FooterReservation';
 import NavbarOnScroll from '../../components/navbars/navbarOnscroll/NavbarOnScroll';
 import useDataBase from '../../context/dataStore/dataStore';
 import { useScrollY } from '../../hooks/useScrollY';
@@ -51,7 +51,7 @@ const SinglePage = () => {
           <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
         </div>
       </div>
-      <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
+      <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10 my-2  " />
       <div className="flex  flex-col mx-auto  max-w-[1500px]">
         <div
           id="photos"
@@ -73,7 +73,7 @@ const SinglePage = () => {
           <SinglePageImageSwiper images={images} />
         </div>
 
-        <div className="block semiSm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
+        <div className="block semiSm:hidden mx-5 semiSm:mx-20 md:mx-28 xl:mx-48">
           <TitleSmallSection
             title={singleData?.title}
             rating={singleData?.rating}
@@ -82,7 +82,7 @@ const SinglePage = () => {
           />
         </div>
 
-        <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
+        <div className="mx-5 semiSm:mx-20 md:mx-28 xl:mx-48">
           <AboutSection
             roomInfo={singleData?.roomInfo}
             host={singleData?.host}
@@ -96,7 +96,7 @@ const SinglePage = () => {
 
         <div
           id="reviews"
-          className="hidden sm:block mx-10 semiSm:mx-20 md:mx-28 xl:mx-48"
+          className="hidden sm:block mx-5 semiSm:mx-20 md:mx-28 xl:mx-48"
         >
           <ReviewSection
             reviews={singleData?.reviews}
@@ -104,18 +104,18 @@ const SinglePage = () => {
             images={images}
           />
         </div>
-        <div className="block sm:hidden mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
+        <div className="block sm:hidden mx-5 semiSm:mx-20 md:mx-28 xl:mx-48">
           <ReviewsSwiper
             reviews={singleData?.reviews}
             rating={singleData?.rating}
             images={images}
           />
         </div>
-        <div id="map" className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48 ">
+        <div id="map" className="mx-5 semiSm:mx-20 md:mx-28 xl:mx-48 ">
           <MapSection location={singleData?.location} />
         </div>
 
-        <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
+        <div className="mx-5 semiSm:mx-20 md:mx-28 xl:mx-48">
           <HostInfo
             host={singleData?.host}
             totalReviews={singleData?.totalReview}

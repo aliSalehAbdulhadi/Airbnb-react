@@ -9,7 +9,9 @@ import DynamicData from '../../data/DynamicData';
 import useSearchSwiper from '../../context/searchSwiper/searchSwiper';
 import useLoading from '../../context/loading/loading';
 import useImageStore from '../../context/imagesStore/imagesStore';
-import Footer from '../../components/singlePageComponents/footer/Footer';
+import Footer from '../../components/footer/Footer';
+import FooterSmall from '../../components/footer/footerSmall/FooterSmall';
+import { useScrollY } from '../../hooks/useScrollY';
 
 const HomePage = () => {
   const setLoadingHome = useLoading((state: any) => state.setLoadingHome);
@@ -17,6 +19,8 @@ const HomePage = () => {
   const populatedb = useDataBase((state: any) => state.populatedb);
   const currSwiper = useSearchSwiper((state: any) => state.swiper);
   const fetch = useImageStore((state: any) => state.fetch);
+  const images = useImageStore((state: any) => state.images);
+
   useEffect(() => {
     [...Array(10)].map(() => populatedb(DynamicData()));
     const timer = setTimeout(() => {
@@ -26,7 +30,7 @@ const HomePage = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [populatedb, currSwiper, setLoadingHome]);
+  }, [populatedb, currSwiper, setLoadingHome, fetch]);
 
   useEffect(() => {
     fetch();
@@ -46,9 +50,9 @@ const HomePage = () => {
         <div className="block semiSm:hidden pt-1">
           <SmallNavbar />
         </div>
-        <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10 sticky top-20 z-[50]" />
+        <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10 sticky top-20 " />
         <div
-          className={`mt-8 mx-10 sm:mx-15 md:mx-24 lg:mx-36 bg-white z-[40] transition-all`}
+          className={`mt-8 sm:mx-15 md:mx-24 lg:mx-36 bg-white z-[40] transition-all`}
         >
           <div className="cursor-pointer font-cerealMedium  flex items-center justify-center h-fit">
             <div className="w-[100%] semiSm:w-[90%] md:w-[92%] xxl:w-[94%]">
@@ -79,6 +83,8 @@ const HomePage = () => {
           })}
         </div>
       </div>
+      <FooterSmall />
+
       <Footer isHome />
     </>
   );

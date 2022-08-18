@@ -24,7 +24,7 @@ const ReviewsSwiper = ({ reviews, rating, images }: reviewSection) => {
         </div>
         <Swiper
           modules={[Navigation]}
-          slidesPerView={1.2}
+          slidesPerView={1.1}
           slidesPerGroup={1}
           className={styles.swiperIcons}
           watchOverflow={true}
@@ -32,7 +32,7 @@ const ReviewsSwiper = ({ reviews, rating, images }: reviewSection) => {
           centeredSlides={true}
         >
           {reviews?.map((review, i) => (
-            <SwiperSlide key={uuidv4()}>
+            <SwiperSlide className="min-w-[250px]" key={uuidv4()}>
               <div className="border-[1px] rounded-xl mr-2">
                 <ReviewCard review={review} image={images[i]?.webformatURL} />
               </div>

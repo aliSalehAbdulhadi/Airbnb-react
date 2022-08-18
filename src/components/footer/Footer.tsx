@@ -4,11 +4,11 @@ const Footer = ({ isHome }: { isHome: boolean }) => {
       className={`${
         isHome
           ? 'sticky bottom-0 bg-white z-50 hidden semiSm:block'
-          : 'pt-10 bg-gray-50'
+          : 'pt-10 mt-10 bg-gray-50'
       } border-t-[1px] `}
     >
       <div className={isHome ? 'hidden' : 'block'}>
-        <div className="mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
+        <div className="mx-5 semiSm:mx-20 md:mx-28 xl:mx-48">
           <div>
             <h1 className="font-cerealMedium text-xl">
               Explore other options in and around
@@ -30,7 +30,7 @@ const Footer = ({ isHome }: { isHome: boolean }) => {
           </div>
         </div>
         <div className="mt-10 border-t-[1px] pt-10">
-          <div className="grid semiSm:grid-cols-4 mx-10 semiSm:mx-20 md:mx-28 xl:mx-48">
+          <div className="grid semiSm:grid-cols-4 mx-5 semiSm:mx-20 md:mx-28 xl:mx-48">
             <div className="flex flex-col mb-2 semiSm:mb-0">
               <h1 className="mb-3 text-sm font-cerealMedium">Supper</h1>
               <div className="opacity-80 flex flex-col text-sm">
@@ -114,7 +114,7 @@ const Footer = ({ isHome }: { isHome: boolean }) => {
           isHome
             ? 'py-2 md:mx-[9rem]'
             : 'mt-10 border-t-[1px] xl:mx-48 py-5 md:mx-28 '
-        } py-2 mx-10 semiSm:mx-20  flex flex-col-reverse semiSm:flex-row semiSm:items-center semiSm:justify-between`}
+        } py-2 mx-5 semiSm:mx-20  flex flex-col-reverse semiSm:flex-row semiSm:items-center semiSm:justify-between`}
       >
         <div className="font-cerealLight text-sm flex flex-col mt-3 semiSm:flex-row semiSm:items-center semiSm:mt-0">
           <div className="flex flex-center mr-3">
