@@ -51,7 +51,7 @@ const SinglePage = () => {
           <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10" />
         </div>
       </div>
-      <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10 my-2  " />
+      <div className="border border-b-[0.5px] border-t-0 border-x-0 border-opacity-10 my-2 hidden semiSm:block  " />
       <div className="flex  flex-col mx-auto  max-w-[1500px]">
         <div
           id="photos"
@@ -69,7 +69,7 @@ const SinglePage = () => {
           <ImageSection images={images} />
         </div>
 
-        <div className="block semiSm:hidden">
+        <div className="block semiSm:hidden ">
           <SinglePageImageSwiper images={images} />
         </div>
 

@@ -13,14 +13,13 @@ import Footer from '../../components/footer/Footer';
 import FooterSmall from '../../components/footer/footerSmall/FooterSmall';
 import { useScrollY } from '../../hooks/useScrollY';
 
+
 const HomePage = () => {
   const setLoadingHome = useLoading((state: any) => state.setLoadingHome);
   const db = useDataBase((state: any) => state.db);
   const populatedb = useDataBase((state: any) => state.populatedb);
   const currSwiper = useSearchSwiper((state: any) => state.swiper);
   const fetch = useImageStore((state: any) => state.fetch);
-  const images = useImageStore((state: any) => state.images);
-
   useEffect(() => {
     [...Array(10)].map(() => populatedb(DynamicData()));
     const timer = setTimeout(() => {
