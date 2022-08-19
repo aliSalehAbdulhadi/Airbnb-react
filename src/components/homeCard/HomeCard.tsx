@@ -9,6 +9,7 @@ const HomeCard = ({ location, host, date, price, id, rating }: homeCard) => {
   const { images, error } = FetchImages();
   const loadingHome = useLoading((state: any) => state.loadingHome);
   const setLoadingHome = useLoading((state: any) => state.setLoadingHome);
+  console.log(images);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoadingHome(false);

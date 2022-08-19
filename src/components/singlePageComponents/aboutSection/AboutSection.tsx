@@ -29,11 +29,11 @@ const AboutSection = ({
         <div className="semiSm:w-[90%] border-b-[1px] pb-4">
           <div className="flex flex-col">
             <div className="flex ">
-              <h1 className="font-cerealMedium text-xl semiSm:text-2xl w-[80%] semiSm:w-full mr-2">
+              <h1 className="font-cerealMedium text-xl semiSm:text-2xl semiSm:w-full mr-2 ">
                 Entire rental unit hosted by {host}
               </h1>
 
-              <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden">
+              <div className="h-14 w-14 rounded-[50%] cursor-pointer overflow-hidden ">
                 <img
                   className="h-[100%] w-[100%] object-cover"
                   src={images[2]?.webformatURL}
