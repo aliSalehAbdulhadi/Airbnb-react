@@ -1,5 +1,5 @@
 # Airbnb-mocksite!
-<ul><b>Airbnb-mocksite</b> is a UI mocksite of the famous website Airbnb.</ul>
+<ul><b>Airbnb-mocksite</b> is a UI mock of the famous website Airbnb.</ul>
 
 
 # Features
